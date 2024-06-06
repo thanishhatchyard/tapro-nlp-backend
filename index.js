@@ -4,6 +4,7 @@ const cors = require('cors');
 const { NlpManager } = require('node-nlp');
 const OpenAI = require("openai");
 const csvReader = require('./controls/csvReader');
+const server = require('http').createServer(app);
 
 app.use(cors());
 
@@ -270,6 +271,7 @@ app.post('/trainWidgetSearch', async (req, res) => {
     return res.json({ message: "Training Complete!", ...trainData });
 });
 
-app.listen(process.env.port || 3000, () => {
-    console.log('server up and running', process.env.port)
-});
+let port = process.env.port || 3000;
+server.listen(port, function () {
+    console.log(`Listening on port ${port}`);
+  });
