@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.json('Welcome to Tapro NLP');
+    return res.json('Welcome to Tapro NLP');
 })
 
 app.post('/train', async (req, res) => {
@@ -271,5 +271,5 @@ app.post('/trainWidgetSearch', async (req, res) => {
 });
 
 app.listen(process.env.port || 3000, () => {
-    console.log('server up and running', 3000)
+    console.log('server up and running', process.env.port)
 });
