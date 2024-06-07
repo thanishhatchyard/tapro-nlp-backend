@@ -12,8 +12,11 @@
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "csv-parser": "^3.0.0",
+    "dictionary-en": "^4.0.0",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "node-nlp": "^4.27.0",
+    "nspell": "^2.1.5",
     "openai": "^4.48.1"
   },
   "devDependencies": {
