@@ -1,17 +1,17 @@
-const express = require('express')
+const express = require("express");
+const cors = require("cors");
+const bodyparser = require("body-parser");
 const app = express();
-const cors = require('cors');
+const server = require('http').createServer(app);
 const { NlpManager } = require('node-nlp');
 const OpenAI = require("openai");
 const csvReader = require('./controls/csvReader');
-const server = require('http').createServer(app);
 
 app.use(cors());
-
-app.use(express.json());
+app.use(bodyparser.json({ limit: "25mb" }));
 
 app.get('/', (req, res) => {
-    return res.json('Welcome to Tapro NLP');
+    res.json({ message: 'routePrefix' + '/ sample', configs: 'configs' });
 })
 
 app.post('/train', async (req, res) => {
@@ -69,12 +69,12 @@ app.post('/untrain', async (req, res) => {
 })
 
 app.get('/prompt', async (req, res) => {
-// app.post('/prompt', async (req, res) => {
+    // app.post('/prompt', async (req, res) => {
     let prompt = req.query.prompt;
     let model = req.query.model;
     let lang = req.query.lang;
     let showRaw = req.query.showRaw;
-    
+
     let newManager = new NlpManager();
     newManager.load('./models/' + model + '.nlp');
 
@@ -83,7 +83,7 @@ app.get('/prompt', async (req, res) => {
     let message = defaultMessage;
     let dataNotFound = false;
 
-    try { 
+    try {
         message = JSON.parse(response.answer);
     } catch (err) {
         dataNotFound = true;
@@ -197,7 +197,7 @@ const getEnglishAndArabicQuestionsArray = (english, arabic) => {
         }
     ]
 }
- 
+
 app.post('/trainWidgetSearch', async (req, res) => {
     let data = [];
     let trainData = [];
@@ -271,7 +271,8 @@ app.post('/trainWidgetSearch', async (req, res) => {
     return res.json({ message: "Training Complete!", ...trainData });
 });
 
-let port = process.env.port || 3000;
+let port = process.env.PORT || 3000;
+
 server.listen(port, function () {
     console.log(`Listening on port ${port}`);
-  });
+});

@@ -1,2 +1,2 @@
 service: tapro
-runtime : nodejs18
+runtime: nodejs18
