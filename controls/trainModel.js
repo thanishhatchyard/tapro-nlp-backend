@@ -1,10 +1,12 @@
-const { NlpManager } = require("node-nlp");
-const fs = require('fs');
+import { NlpManager } from 'node-nlp';
+import fs from 'fs';
+import { csvReader } from './csvReader.js';
+import { getEnglishAndArabicQuestionsArray } from './getPossibleResults.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import axios from 'axios';
 
-const csvReader = require("./csvReader");
-const { getEnglishAndArabicQuestionsArray } = require("./getPossibleResults");
-
-const loadNlpManager = (filePath) => {
+export const loadNlpManager = (filePath) => {
     const manager = new NlpManager({ languages: ['en', 'ar'], forceNER: true });
     if (fs.existsSync(filePath)) {
         const data = fs.readFileSync(filePath);
@@ -13,23 +15,23 @@ const loadNlpManager = (filePath) => {
     return manager;
 };
 
-const saveNlpManager = (manager, filePath) => {
+export const saveNlpManager = (manager, filePath) => {
     const data = manager.export();
     fs.writeFileSync(filePath, data);
 };
 
-const trainMenuSearchModel = async (reqObject) => {
+export const trainMenuSearchModel = async (reqObject) => {
     let data = [];
     let trainData = [];
     const bodyContent = JSON.parse(JSON.stringify(reqObject))
     const model = bodyContent.model;
     const filePath = './models/' + model + '.nlp';
     const manager = loadNlpManager(filePath);
-    // const manager = new NlpManager({ languages: ['en', 'ar'], forceNER: true });
     const isUntrainMode = reqObject.isUntrainMode === '1';
 
     try {
         data = await csvReader('./uploads/dt.csv');
+        console.log('read')
     } catch (error) {
         data = false;
     }
@@ -85,7 +87,7 @@ const trainMenuSearchModel = async (reqObject) => {
                 await manager.addDocument('en', que.en, dt.intent);
                 await manager.addDocument('ar', que.ar, dt.intent);
             }
-            
+
         });
 
         dt.answers.forEach(async (ans) => {
@@ -101,18 +103,16 @@ const trainMenuSearchModel = async (reqObject) => {
 
     await manager.train();
     saveNlpManager(manager, filePath);
-    // manager.save('./models/' + model + '.nlp');
 
     return trainData;
 }
 
-const trainModel = async (reqObject) => {
+export const trainModel = async (reqObject) => {
     const bodyContent = reqObject;
     const model = bodyContent.model;
     const trainData = bodyContent.trainData;
     const filePath = './models/' + model + '.nlp';
     const manager = loadNlpManager(filePath);
-    // const manager = new NlpManager({ languages: ['en', 'ar'], forceNER: true });
     const isUntrainMode = reqObject.isUntrainMode === '1';
 
     trainData.forEach((dt) => {
@@ -129,7 +129,7 @@ const trainModel = async (reqObject) => {
             } else {
                 manager.addDocument('en', que.en, dt.intent);
                 manager.addDocument('ar', que.ar, dt.intent);
-                
+
             }
         });
 
@@ -145,13 +145,55 @@ const trainModel = async (reqObject) => {
     })
 
     await manager.train();
-    // manager.save('./models/' + model + '.nlp');
     saveNlpManager(manager, filePath);
 
     return bodyContent;
 }
-module.exports = {
-    trainMenuSearchModel,
-    trainModel,
-    loadNlpManager
-};
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const OPENAI_API_KEY = process.env.GPT_API_KEY;
+const TRAINING_FILE_PATH = path.join(__dirname, '../data.jsonl');
+
+export const trainGPT = async () => {
+    const form = new FormData();
+    form.append('purpose', 'fine-tune');
+    form.append('file', fs.createReadStream(TRAINING_FILE_PATH));
+
+    try {
+        const response = await axios.post('https://api.openai.com/v1/files', form, {
+            headers: {
+                ...form.getHeaders(),
+                'Authorization': `Bearer ${OPENAI_API_KEY}`
+            }
+        });
+        console.log('File uploaded:', response.data);
+        return response.data;
+    } catch (error) {
+        console.error('Error uploading file:', error.response ? error.response.data : error.message);
+        throw error;
+    }
+}
+
+export const updateFineTuneModel = async () => {
+    const trainingFileId = 'file-X2oj9EvJsAXj0NbrtmWoe4M2';
+    const fineTuneId = 'ft:gpt-3.5-turbo-0125:personal::9YpZ80FO';
+
+    try {
+      const response = await axios.post(`https://api.openai.com/v1/fine_tuning/jobs`, {
+        training_file: trainingFileId,
+        model: fineTuneId,
+      }, {
+        headers: {
+          'Authorization': `Bearer ${OPENAI_API_KEY}`,
+          'Content-Type': 'application/json'
+        }
+      });
+      console.log('Fine-tune update job created:', response.data);
+      return response.data;
+    } catch (error) {
+      console.error('Error creating fine-tune update job:', error.response ? error.response.data : error.message);
+      throw error;
+    }
+  }

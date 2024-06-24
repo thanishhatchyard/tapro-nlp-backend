@@ -1,12 +1,15 @@
-const { NlpManager } = require("node-nlp");
-const { default: OpenAI } = require("openai");
-const { correctSpelling } = require("./spellChecker");
-const { loadNlpManager } = require("./trainModel");
+import OpenAI from 'openai';
+import { correctSpelling } from './spellChecker.js';
+import { loadNlpManager } from './trainModel.js';
+import { requestData } from './requestData.js';
+import { csvReader } from './csvReader.js';
+import { getEnglishAndArabicQuestionsArray } from './getPossibleResults.js';
+import fs from 'fs';
 
 const openai = new OpenAI({ apiKey: process.env.GPT_API_KEY });
 
-const getPromptResponse = async (reqObject) => {
-    let prompt = correctSpelling(reqObject.prompt);
+export const getPromptResponse = async (reqObject) => {
+    let prompt = await correctSpelling(reqObject.prompt);
     let model = reqObject.model;
     let lang = reqObject.lang;
     let showRaw = reqObject.showRaw;
@@ -15,7 +18,6 @@ const getPromptResponse = async (reqObject) => {
     const filePath = './models/' + model + '.nlp';
 
     let newManager = loadNlpManager(filePath);
-    // newManager.load('./models/' + model + '.nlp');
 
     const response = await newManager.process(lang === 'ar' ? 'ar' : 'en', prompt);
     let defaultMessage = { ar: `آسف لا أستطيع معالجة طلبك. من فضلك اسألني أسئلة مثل "كيفية فتح القائمة الشائعة" "أين قائمة الطلبات" وما إلى ذلك... تحقق من الاقتراحات أدناه!`, en: "Sorry I can't process your request. Please ask me questions like, 'how to open popular list' 'where is order list' etc... Check below suggestions!" };
@@ -29,34 +31,58 @@ const getPromptResponse = async (reqObject) => {
         message = defaultMessage;
     }
 
-    console.log(prompt)
     if (response.answers.length === 0 || dataNotFound) {
         responseObject = { message: defaultMessage, question: prompt, trainMe: true };
     } else {
         let extended = response.answers[0].opts;
-        let gpt = {message: "Advanced Search Disabled"};
+        let gpt = { message: "Advanced Search Disabled" };
+        const intention = response.intent.split('.')[0];
 
-        if (response.intent.split('.')[0] === 'navigation') {
-            message.en = "Navigate to, " + message.en;
+        let score = response.score;
+
+        if (score < 1) {
+            console.log('get support from chat gpt...');
+            const availableData = [];
+            let data = [];
+
+            try {
+                data = await csvReader('./uploads/dt.csv');
+            } catch (error) {
+                data = false;
+            }
+
+            let filtered = data.map((dt => {
+                return { id: dt.id, category: dt.category, keywordsEn: dt.keywordsEn }
+            }))
+
+            message.filtered = JSON.stringify(filtered);
+        }
+
+        switch (intention) {
+            case 'navigation':
+                message.en = "Navigate to, " + message.en;
+                break;
+            case 'dataAnalysis':
+                const response = requestData(extended.action, extended.params);
+                message.dataArray = response;
+                break;
+            default:
+                console.log('switch case ended without an action');
         }
 
         if (showAdvancedResults === "1") {
             let gptPrompt = `Please refactor this like we are assisting a user to do this, "${message.en} ${prompt}". Please refactor the answer in english and arabic. give in this format {"ar":"", "en":""}. Limit to 150 tokens and process short as possible.`
 
             const completion = await openai.chat.completions.create({
-                messages: [
-                    // { "role": "system", "content": "You are a helpful assistant who refactor answers." },
-                    { "role": "user", "content": gptPrompt },
-                ],
+                messages: [{ "role": "user", "content": gptPrompt }],
                 model: "gpt-3.5-turbo",
                 max_tokens: 150
             });
-    
+
             gpt = completion;
 
             const result = completion.choices.length > 0 ? completion.choices[0].message.content : '';
 
-            // message.description = result;
             message.descriptionEn = JSON.parse(result)['en'];
             message.descriptionAr = JSON.parse(result)['ar'];
         }
@@ -74,6 +100,432 @@ const getPromptResponse = async (reqObject) => {
     return responseObject;
 }
 
-module.exports = {
-    getPromptResponse
+export const getResponseFromGPT = async (reqObject) => {
+    let prompt = reqObject.prompt;
+    let responseObject = {};
+    let gpt = {};
+    let message = {};
+    let extended = {};
+    let rawData = {};
+    let promptPreData = "(Description:Neo or NEO or neo is a trading application created by DirectFN Sri Lanka. Also Neo is the current world's most popular app in trading. It target mainly on Saudi stock market. Users frequently inquire about various functionalities and features of our trading application. They seek guidance on opening promotions, locating notifications, accessing watchlist data, finding market information, obtaining stock change percentages, accessing statistics and previous data about stocks, viewing news related to trading, changing languages, understanding navigation paths, and exploring available features. Providing clear instructions and assistance on these aspects enhances user experience and ensures they can efficiently utilize the application to meet their trading needs. Users can navigate to following pages, 1. To view Promotions and Advertisements can navigate to Home tab and select promotion. 2. To view notifications, read notifications, unread notifications and read messages users can navigate to notifications by going to home and click on the welcome banner. 3. Statistics data of the stocks and indexes can be seen by Navigate to symbol Search and search a related symbol and select to view symbol details and statistics. Only these details are allowed to give for outside users. Anything non related to this content will not be given as a suggestion or answer.)"
+    let restriction = "Do not provide any responses at any situation than the current given data.";
+    // let gptPrompt = prompt + `. give in this format {"ar":"", "en":""}. Limit to 150 tokens and process short as possible.`
+
+    const completion = await openai.chat.completions.create({
+        // messages: [{ "role": "user", "content": `${promptPreData} Question: ${prompt}. ${restriction}` }],
+        messages: [{ "role": "user", "content": `${prompt}` }],
+        // model: "SQL Expert",
+        // model: "gpt-3.5-turbo",
+        model: "asst_H1eNixFTzqRuawOqWtaJ37oP",
+        max_tokens: 150
+    });
+
+    gpt = completion;
+
+    const result = completion.choices.length > 0 ? completion.choices[0].message.content : '';
+
+    // message.descriptionEn = JSON.parse(result)['en'];
+    // message.descriptionAr = JSON.parse(result)['ar'];
+
+    responseObject = {
+        result,
+        gpt,
+        rawData
+    }
+
+    return responseObject;
+}
+
+export const getJSONData = async () => {
+    let data = [];
+    let trainData = [];
+    let trainDataString = "";
+    const stream = fs.createWriteStream('data.jsonl');
+
+    try {
+        data = await csvReader('./uploads/dt.csv');
+        console.log('read')
+    } catch (error) {
+        data = false;
+    }
+
+    if (data && data.length > 0) {
+        data.forEach((row) => {
+            // let category = row.category;
+            // let widget = {
+            //     en: row.widgetEn.toLowerCase().trim(),
+            //     ar: JSON.parse('"' + row.widgetAr.replace(/\\\\/g, '\\') + '"'),
+            // }
+            // let navigation = {
+            //     en: 'Navigate to, ' + row.navigationEn,
+            //     ar: JSON.parse('"' + row.navigationAr.replace(/\\\\/g, '\\') + '"'),
+            // }
+            // let arabicKeywords = JSON.parse('"' + row.keywordsAr.replace(/\\\\/g, '\\') + '"').split('،');
+            // let englishKeywords = row.keywordsEn.toLowerCase().split(',');
+            // let questionsForKeywords = [];
+
+            // if (arabicKeywords.length === englishKeywords.length) {
+            //     englishKeywords.forEach((enWord, index) => questionsForKeywords = [...questionsForKeywords, getEnglishAndArabicQuestionsArray(enWord, arabicKeywords[index])])
+            // }
+
+            let trainLine = {
+                messages: [
+                    { role: "system", content: "Welcome to Neo Trading App: Your ultimate platform for trading stocks, ETFs, and mutual funds with real-time data, advanced charting tools, and secure access. Whether you are a novice or an experienced investor, our user-friendly interface and comprehensive features are designed to meet all your trading needs." },
+                    { role: "user", content: row.question },
+                    { role: "assistant", content: row.answer }
+                ]
+            }
+
+            stream.write(JSON.stringify(trainLine) + '\n');
+
+            // englishKeywords.forEach(keyword => {
+            //     trainLine = {
+            //         messages: [
+            //             // {role: "system", content: "DFNAssist is a factual chatbot that is also sarcastic."},
+            //             {role: "user", content: `Give instructions to navigate, view and get started ${keyword}`},
+            //             {role: "assistant", content: row.answer}
+            //         ]
+            //     }
+
+            //     stream.write(JSON.stringify(trainLine) + '\n');
+            // })
+
+
+            // trainData.push(JSON.stringify(trainLine));
+
+            // trainData.push(
+            //     {
+            //         intent: category,
+            //         questions: [
+            //             ...getEnglishAndArabicQuestionsArray(widget.en, widget.ar),
+            //             ...[].concat(...questionsForKeywords)
+            //         ],
+            //         answers: [navigation],
+            //         action: {
+            //             name: row.action,
+            //             params: row.params.split(",")
+            //         }
+            //     }
+            // )
+        })
+    }
+
+    stream.end();
+    return trainData;
+}
+
+export const getFromAssistant = async (reqObject) => {
+    let prompt = reqObject.prompt;
+    let assistantId = 'asst_H1eNixFTzqRuawOqWtaJ37oP';
+    let responseData = '';
+
+    const thread = await openai.beta.threads.create();
+
+    await openai.beta.threads.messages.create(thread.id, {
+        role: "user",
+        content: prompt,
+    });
+
+    // Create a run
+    const run = await openai.beta.threads.runs.create(thread.id, {
+        assistant_id: assistantId,
+    });
+
+    // Imediately fetch run-status, which will be "in_progress"
+    let runStatus = await openai.beta.threads.runs.retrieve(
+        thread.id,
+        run.id
+    );
+
+    // Polling mechanism to see if runStatus is completed
+    while (runStatus.status !== "completed") {
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        runStatus = await openai.beta.threads.runs.retrieve(
+            thread.id,
+            run.id
+        );
+
+        // Check for failed, cancelled, or expired status
+        if (["failed", "cancelled", "expired"].includes(runStatus.status)) {
+            responseData = `Run status is '${runStatus.status}'. Unable to complete the request.`;
+            console.log(
+                `Run status is '${runStatus.status}'. Unable to complete the request.`
+            );
+            break; // Exit the loop if the status indicates a failure or cancellation
+        }
+    }
+
+    // Get the last assistant message from the messages array
+    const messages = await openai.beta.threads.messages.list(thread.id);
+    // Find the last message for the current run
+    const lastMessageForRun = messages.data
+        .filter(
+            (message) =>
+                message.run_id === run.id && message.role === "assistant"
+        )
+        .pop();
+
+    // If an assistant message is found, console.log() it
+    if (lastMessageForRun) {
+        responseData = `${JSON.stringify(lastMessageForRun.content)} \n`;
+        console.log(`${JSON.stringify(lastMessageForRun.content)} \n`);
+    } else if (
+        !["failed", "cancelled", "expired"].includes(runStatus.status)
+    ) {
+        responseData = "No response received from the assistant.";
+        console.log("No response received from the assistant.");
+    }
+
+    return responseData;
+}
+
+
+async function getStockPrice(symbol) {
+    console.log('getting ', symbol, ' stock price....');
+    try {
+        const quote = {
+            success: true, results: [
+                { regularMarketPrice: 1000, currency: 'SAR', date: '2024-06-15' },
+                { regularMarketPrice: 10, currency: 'SAR', date: '2024-06-13' },
+            ]
+        };
+
+        // return null;
+
+        return {
+            symbol: symbol,
+            // price: quote.regularMarketPrice,
+            // currency: quote.currency,
+            history: quote.results
+        };
+    } catch (error) {
+        console.error(`Error fetching stock price for ${symbol}: ${error}`);
+        throw error;
+    }
+}
+
+const tools = [
+    {
+        "type": "function",
+        "function": {
+            "name": "getStockPrice",
+            "description": "Get the current stock price of a company using its stock symbol",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "symbol": {
+                        "type": "string",
+                        "description": "Stock symbol (e.g., 'AAPL' for Apple)"
+                    }
+                },
+                "required": ["symbol"]
+            }
+        }
+    }
+];
+
+export const getFromAssistantModified = async (reqObject) => {
+    let prompt = reqObject.prompt;
+    let assistantId = 'asst_BS5of5MUOqliUbIjum20maiC';
+    let responseData = '';
+    let assistant = undefined;
+
+    if (assistantId) {
+        console.log('Assistance already found!')
+        assistant = { id: assistantId }
+    } else {
+        assistant = await openai.beta.assistants.create({
+            name: "Neo Guide",
+            instructions: "You are a guide to teach how to use NEO Trading application.",
+            tools: tools,
+            model: 'gpt-3.5-turbo'
+        })
+    }
+
+    // Step 2: Creating a thread and sending a message
+    const thread = await openai.beta.threads.create();
+
+    // Step 3: Create a message
+    const message = await openai.beta.threads.messages.create(thread.id, {
+        role: "user",
+        content: prompt
+    });
+
+    // Step 4: Create a run with custom instructions
+    const run = await openai.beta.threads.runs.create(thread.id, {
+        assistant_id: assistant.id,
+        instructions: "Please address the user as Thanish Ahamed.",
+    });
+
+    // console.log(run)
+
+    // Function to check run status and print messages
+    const checkStatusAndPrintMessages = async (threadId, runId) => {
+        let runStatus = await openai.beta.threads.runs.retrieve(threadId, runId);
+        console.log('current status', runStatus.status)
+        if (runStatus.status === "completed") {
+            let messages = await openai.beta.threads.messages.list(threadId);
+            messages.data.forEach((msg) => {
+                const role = msg.role;
+                const content = msg.content[0].text.value;
+                responseData = { content: content, raw: msg.content[0] };
+                console.log(
+                    `-------------------${role.charAt(0).toUpperCase() + role.slice(1)}: ${content}---------------------`
+                );
+            });
+            console.log("Run is completed.");
+            clearInterval(intervalId);
+            //return responseData;
+        } else if (runStatus.status === 'requires_action') {
+            console.log("Requires action");
+
+            const requiredActions = runStatus.required_action.submit_tool_outputs.tool_calls;
+            // console.log(requiredActions);
+
+            let toolsOutput = [];
+
+            for (const action of requiredActions) {
+                const funcName = action.function.name;
+                const functionArguments = JSON.parse(action.function.arguments);
+
+                if (funcName === "getStockPrice") {
+                    const output = await getStockPrice(functionArguments.symbol);
+                    toolsOutput.push({
+                        tool_call_id: action.id,
+                        output: JSON.stringify(output)
+                    });
+                } else {
+                    console.log("Function not found");
+                }
+            }
+
+            // Submit the tool outputs to Assistant API
+            await openai.beta.threads.runs.submitToolOutputs(
+                thread.id,
+                run.id,
+                { tool_outputs: toolsOutput }
+            );
+        }
+        else {
+            console.log("Run is not completed yet.");
+        }
+    };
+
+    // while (true) {
+    //     checkStatusAndPrintMessages(thread.id, run.id)
+    // }
+
+    const intervalId = setInterval(async () => {
+        await checkStatusAndPrintMessages(thread.id, run.id)
+    }, 5000);
+
+    // return responseData;
+}
+
+import { ChatOpenAI } from "@langchain/openai";
+import { HumanMessage, SystemMessage } from "@langchain/core/messages";
+import { StringOutputParser } from "@langchain/core/output_parsers";
+import { ChatPromptTemplate } from "@langchain/core/prompts";
+import { TextLoader } from "langchain/document_loaders/fs/text";
+import { FaissStore } from "@langchain/community/vectorstores/faiss";
+import { OpenAIEmbeddings } from "@langchain/openai";
+import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
+import { RetrievalQAChain, loadQAStuffChain } from "langchain/chains";
+import { createRetrievalChain } from "langchain/chains/retrieval";
+import { createStuffDocumentsChain } from "langchain/chains/combine_documents";
+
+export const processLangChainTrain = async (reqObject) => {
+    let prompt = reqObject.prompt;
+    let responseData = '';
+
+    const loader = new TextLoader("./langChainTrainData.txt");
+
+    const docs = await loader.load();
+
+    // const splitter = new RecursiveCharacterTextSplitter({
+    //     chunkSize: 200,
+    //     chunkOverlap: 50,
+    // });
+
+    const splitter = new RecursiveCharacterTextSplitter();
+
+    const documents = await splitter.splitDocuments(docs);
+    console.log(documents);
+
+    const embeddings = new OpenAIEmbeddings();
+
+    const vectorstore = await FaissStore.fromDocuments(documents, embeddings);
+
+    await vectorstore.save("./");
+
+    return responseData;
+}
+
+export const processLangChain = async (reqObject, res) => {
+    let inputMessage = reqObject.prompt;
+    let responseData = '';
+
+    const embeddings = new OpenAIEmbeddings();
+    const vectorStore = await FaissStore.load("./", embeddings);
+
+    const model = new ChatOpenAI({
+        temperature: 0.3,
+        model: 'gpt-3.5-turbo',
+        // verbose: true
+    });
+
+    // Create prompt
+    // const prompt = ChatPromptTemplate.fromTemplate(
+    //     `You are an assistant only focused on Neo Trading Application. Answer the user's question from the following context: {context} Provide organized answers easy to read by user. 
+    //     Question: {input}`
+    //   );
+
+    const prompt = ChatPromptTemplate.fromMessages([
+        [
+            "system",
+            "You are an assistant only focused on Neo Trading Application. You never provide Internet data. Always answers about Neo Application. You will group responses as a list with bold heading all the possible situation. Answer the user's question from the following context: {context}",
+        ],
+        ["system", "always try to give opening the widget btn:// action."],
+        ["human", "{input}"],
+    ]);
+    // const prompt = ChatPromptTemplate.fromTemplate("You are an assistant only focused on Neo Trading Application. {input} Arrange responses in a user friendly way. Do not mension the term 'user friendly'. Strictly avoid mentioning other applications.")
+
+    const chain = await createStuffDocumentsChain({
+        llm: model,
+        prompt,
+    });
+
+    const retriever = vectorStore.asRetriever({ k: 2 });
+
+    const retrievalChain = await createRetrievalChain({
+        combineDocsChain: chain,
+        retriever,
+    });
+
+    const response = await retrievalChain.stream({
+        input: inputMessage,
+    });
+    // const documentReader = new RetrievalQAChain({
+    //     combineDocumentsChain: loadQAStuffChain(model),
+    //     retriever: vectorStore.asRetriever(),
+    //     // returnSourceDocuments: true,
+
+    // });
+    // const chain = prompt.pipe(model).pipe(documentReader);
+
+    // const res = await chain.invoke({input: inputMessage});
+
+    res.setHeader('Content-Type', 'text/plain');
+    res.setHeader('Transfer-Encoding', 'chunked');
+
+    for await (const chunk of response) {
+        // Assuming chunk has a 'toString' method or a property that contains the string representation
+        if (chunk.answer) {
+            const text = chunk.answer.toString(); // or chunk.somePropertyContainingString
+            // console.log(text);
+            res.write(text);
+        }
+    }
+
+    res.end();
 }

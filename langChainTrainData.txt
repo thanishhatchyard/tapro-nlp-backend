@@ -1,0 +1,96 @@
+1.	What is NEO App
+1.1	What is the concept of NEO app?
+1.2	What does NEO app do?
+1.3	What is NEO?
+
+Answer:
+anb capital App (NEO) is an enhanced, user-friendly and easy to navigate interface that effortlessly connects you to the Saudi Exchange and to our dynamic mutual funds. Experience a new era of trading excellence.
+This App will keep you in touch with the ever-changing financial markets and put decision-taking and order-placing ability at your fingertips.
+Monitor the markets and your positions, catch up on the latest news. Open your online trading account today and start trading the main and Nomu Saudi Exchange markets.
+NEO App gives you all the features you need to trade in the Saudi Market. Trade your way with ANB Capital, and react quickly to every opportunity. Trade directly from your Smartphone or Web.
+Link to download App:
+https://play.google.com/store/apps/details?id=com.directfn.mobile.anb_prod&hl=en
+
+
+2.	Founders
+2.1	Which company develop NEO app?
+NEO was built by a Saudi based company called 'DirectFN ' which is an award winning & industry leading Capital Market Solutions Provider
+
+
+3.	Specialty
+3.1	What outstands NEO app from other trading app?
+3.2	What highlights NEO app?
+3.3	What is special in NEO app?
+
+Answer: 
+Enhanced UI/UX - user-friendly and easy to navigate interface
+Effortless connectivity to the Saudi Exchange and to dynamic mutual funds
+Enhanced and advanced trading features - Conditional orders, Auto invest
+Seamless account opening - Easy and quick account opening process
+
+If you're vibrant, you're on the move, and you expect excellence.  
+That is why we designed our app to match your aspirations.
+
+Download our app today and begin your journey to growing your portfolio over the long term.  
+We welcome you to the new standard in Saudi brokerage.
+
+
+4.	Main features
+4.1	What are the key features of NEO app?
+4.2	What promotes NEO app?
+4.3	What are the key features of NEO app?
+4.4	Why we should use NEO app?
+
+Answer: 
+Easy access to portfolio information
+Simple swipes and scrolls will get you to all the information you want to see about your portfolio.
+
+Automated investing
+Schedule your investment orders in advance for any day, week, or month for a predetermined period.
+
+Dynamic watchlists
+Create specialized watchlists for Shariah-compliant stocks or newly listed stocks or growth stocks or ESG stocks.  Monitor market dynamics and track the performance of your favorite stocks. Or simply follow our watchlists, especially curated to keep you informed about investment themes and trends.
+
+Analyst ratings
+Access news and information about Saudi listed companies including analyst ratings and recommendations.
+
+Margin financings
+Request margin financing within the app to enhance your stock buying power.
+ 
+Switch to Global Trading at a flick
+Switch over into our global trading platform with a single tap. Our global trading app is your gateway to the world, connecting you to GCC and international markets effortlessly.
+
+A Visual Treat
+The app is especially designed to be easy on your eyes. We created the screens for you to enjoy your trading experience.
+
+Widget Navigations
+
+Name: Promotions
+Path: Home > Promotion
+Link to open, view or navigate: btn://open/promotion
+About: The Promotions widget in the Neo trading application showcases special offers, discounts, and events to enhance the trading experience. It provides information on deals like reduced fees, bonus credits, and free trades, as well as upcoming events. The widget personalizes promotions based on user behavior, highlights partner benefits, and alerts users about expiring offers, ensuring they capitalize on valuable opportunities.
+Included Content: discount, sale, offer, special, deal, limited-time, coupon, save, buy one get one, clearance, exclusive, new, launch, bonus, reward, gift, free, trial, membership, upgrade, discount code, VIP, flash sale, event, giveaway, pre-order, early bird, bundle, promotion, benefit, savings.
+
+Name: Notifications
+Path: Home > Welcome banner
+Link to open, view or navigate: btn://open/notification
+About: The Notification widget keeps users informed about important updates, alerts, and reminders. It ensures timely communication regarding account activity, system changes, and promotional messages.
+Included Content: alert, update, reminder, notification, message, warning, important, information, system, maintenance, downtime, account, activity, security, change, new feature, update, alert, reminder, deadline, action required, critical, announcement, system update, bug fix, scheduled maintenance, security update
+
+Question: List down some trading applications
+Answer: We offer Neo Trading App to trade and view stocks. Please refer some internet resource to view about other trading applications.
+
+Question: What is <<name of an app than NEO>>?
+Answer: We offer Neo Trading App to trade and view stocks. Please refer some internet resource to view about other trading applications.
+
+Question: Suggest number of trading applications
+Answer: We offer Neo Trading App to trade and view stocks. Please refer some internet resource to view about other trading applications.
+
+Question: Comparison with Other Trading Applications
+Answer: We offer Neo Trading App to trade and view stocks. Please refer some internet resource to view about other trading applications.
+
+Question: Is there any other trading applications like neo?
+Answer: We offer Neo Trading App to trade and view stocks. Please refer some internet resource to view about other trading applications.
+
+Question: give Trading Applications Similar to Neo
+Answer: We offer Neo Trading App to trade and view stocks. Please refer some internet resource to view about other trading applications.

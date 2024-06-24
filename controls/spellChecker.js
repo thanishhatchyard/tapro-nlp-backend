@@ -1,17 +1,21 @@
-const nspell = require('nspell');
-const fs = require('fs');
-const path = require('path');
-
-const affPath = path.join(__dirname, '../node_modules', 'dictionary-en', 'index.aff');
-const dicPath = path.join(__dirname, '../node_modules', 'dictionary-en', 'index.dic');
-const aff = fs.readFileSync(affPath, 'utf-8');
-const dic = fs.readFileSync(dicPath, 'utf-8');
+import { readFile } from 'fs/promises';
+import NSpell from 'nspell';
 
 
-const spellChecker = nspell(aff, dic);
+const affPath = './dictionary/index.aff';
+const dicPath = './dictionary/index.dic';
 
-// Function to correct spelling mistakes
-const correctSpelling = (input) => {
+async function loadDictionary() {
+  const [aff, dic] = await Promise.all([
+    readFile(affPath, 'utf-8'),
+    readFile(dicPath, 'utf-8')
+  ]);
+
+  return new NSpell(aff, dic);
+}
+
+export const correctSpelling = async (input) => {
+  const spellChecker = await loadDictionary();
   const words = input.split(' ');
   const correctedWords = words.map(word => {
     if (!spellChecker.correct(word)) {
@@ -21,10 +25,5 @@ const correctSpelling = (input) => {
     return word;
   });
 
-//   console.log(correctedWords)
   return correctedWords.join(' ');
 };
-
-module.exports = {
-    correctSpelling
-}

@@ -1,4 +1,11 @@
-const getEnglishAndArabicQuestionsArray = (english, arabic) => {
+export const getEnglishAndArabicQuestionsArray = (english, arabic) => {
+    return (
+        JSON.stringify({
+            "en": `Instructions to use ${english}.`,
+            "ar": `تعليمات لاستخدام ${arabic}.`
+        })
+    )
+    
     return [
         {
             "en": `navigate to ${english}`,
@@ -87,7 +94,3 @@ const getEnglishAndArabicQuestionsArray = (english, arabic) => {
         }
     ]
 }
-
-module.exports = {
-    getEnglishAndArabicQuestionsArray
-};

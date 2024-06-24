@@ -1,0 +1,553 @@
+{
+  "settings": {
+    "languages": [
+      "en",
+      "ar"
+    ],
+    "forceNER": true,
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en",
+      "ar"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "histori,list,my,order,show": {
+            "intent": "dataAnalysis.orderList",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "dataAnalysis.orderList": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "Show my order list history",
+            "intent": "dataAnalysis.orderList"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show my order list history",
+            "intent": "dataAnalysis.orderList"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show my order list history",
+            "intent": "dataAnalysis.orderList"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show my order list history",
+            "intent": "dataAnalysis.orderList"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show my order list history",
+            "intent": "dataAnalysis.orderList"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show my order list history",
+            "intent": "dataAnalysis.orderList"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show my order list history",
+            "intent": "dataAnalysis.orderList"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show my order list history",
+            "intent": "dataAnalysis.orderList"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show my order list history",
+            "intent": "dataAnalysis.orderList"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show my order list history",
+            "intent": "dataAnalysis.orderList"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show my order list history",
+            "intent": "dataAnalysis.orderList"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show my order list history",
+            "intent": "dataAnalysis.orderList"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show my order list history",
+            "intent": "dataAnalysis.orderList"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show my order list history",
+            "intent": "dataAnalysis.orderList"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show my order list history",
+            "intent": "dataAnalysis.orderList"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "show": 1,
+              "my": 1,
+              "order": 1,
+              "list": 1,
+              "histori": 1
+            },
+            "intents": {
+              "dataAnalysis.orderList": 1
+            },
+            "intentFeatures": {
+              "dataAnalysis.orderList": {
+                "show": 1,
+                "my": 1,
+                "order": 1,
+                "list": 1,
+                "histori": 1
+              }
+            },
+            "featuresToIntent": {
+              "show": [
+                "dataAnalysis.orderList"
+              ],
+              "my": [
+                "dataAnalysis.orderList"
+              ],
+              "order": [
+                "dataAnalysis.orderList"
+              ],
+              "list": [
+                "dataAnalysis.orderList"
+              ],
+              "histori": [
+                "dataAnalysis.orderList"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "show",
+                "my",
+                "order",
+                "list",
+                "histori"
+              ],
+              "intents": [
+                "dataAnalysis.orderList"
+              ],
+              "perceptrons": [
+                [
+                  2.597337484359741,
+                  2.597337484359741,
+                  2.597337484359741,
+                  2.597337484359741,
+                  2.597337484359741,
+                  1.2986777942599315
+                ]
+              ]
+            }
+          }
+        }
+      },
+      "ar": {
+        "settings": {
+          "locale": "ar",
+          "trainByDomain": false,
+          "tag": "domain-manager-ar",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "تطبيق,منشأ,هذا": {
+            "intent": "dataAnalysis.orderList",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "dataAnalysis.orderList": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "منشأ هذا التطبيق؟",
+            "intent": "dataAnalysis.orderList"
+          },
+          {
+            "domain": "default",
+            "utterance": "منشأ هذا التطبيق؟",
+            "intent": "dataAnalysis.orderList"
+          },
+          {
+            "domain": "default",
+            "utterance": "منشأ هذا التطبيق؟",
+            "intent": "dataAnalysis.orderList"
+          },
+          {
+            "domain": "default",
+            "utterance": "منشأ هذا التطبيق؟",
+            "intent": "dataAnalysis.orderList"
+          },
+          {
+            "domain": "default",
+            "utterance": "منشأ هذا التطبيق؟",
+            "intent": "dataAnalysis.orderList"
+          },
+          {
+            "domain": "default",
+            "utterance": "منشأ هذا التطبيق؟",
+            "intent": "dataAnalysis.orderList"
+          },
+          {
+            "domain": "default",
+            "utterance": "منشأ هذا التطبيق؟",
+            "intent": "dataAnalysis.orderList"
+          },
+          {
+            "domain": "default",
+            "utterance": "منشأ هذا التطبيق؟",
+            "intent": "dataAnalysis.orderList"
+          },
+          {
+            "domain": "default",
+            "utterance": "منشأ هذا التطبيق؟",
+            "intent": "dataAnalysis.orderList"
+          },
+          {
+            "domain": "default",
+            "utterance": "منشأ هذا التطبيق؟",
+            "intent": "dataAnalysis.orderList"
+          },
+          {
+            "domain": "default",
+            "utterance": "منشأ هذا التطبيق؟",
+            "intent": "dataAnalysis.orderList"
+          },
+          {
+            "domain": "default",
+            "utterance": "منشأ هذا التطبيق؟",
+            "intent": "dataAnalysis.orderList"
+          },
+          {
+            "domain": "default",
+            "utterance": "منشأ هذا التطبيق؟",
+            "intent": "dataAnalysis.orderList"
+          },
+          {
+            "domain": "default",
+            "utterance": "منشأ هذا التطبيق؟",
+            "intent": "dataAnalysis.orderList"
+          },
+          {
+            "domain": "default",
+            "utterance": "منشأ هذا التطبيق؟",
+            "intent": "dataAnalysis.orderList"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "ar",
+              "tag": "nlu-ar",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "منشأ": 1,
+              "هذا": 1,
+              "تطبيق": 1
+            },
+            "intents": {
+              "dataAnalysis.orderList": 1
+            },
+            "intentFeatures": {
+              "dataAnalysis.orderList": {
+                "منشأ": 1,
+                "هذا": 1,
+                "تطبيق": 1
+              }
+            },
+            "featuresToIntent": {
+              "منشأ": [
+                "dataAnalysis.orderList"
+              ],
+              "هذا": [
+                "dataAnalysis.orderList"
+              ],
+              "تطبيق": [
+                "dataAnalysis.orderList"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "ar",
+                "tag": "nlu-ar",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "منشأ",
+                "هذا",
+                "تطبيق"
+              ],
+              "intents": [
+                "dataAnalysis.orderList"
+              ],
+              "perceptrons": [
+                [
+                  4.081553936004639,
+                  4.081553936004639,
+                  4.081553936004639,
+                  2.040812271623301
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "Show my order list history"
+      ],
+      [
+        "ar",
+        "منشأ هذا التطبيق؟"
+      ],
+      [
+        "en",
+        "Show my order list history"
+      ],
+      [
+        "ar",
+        "منشأ هذا التطبيق؟"
+      ],
+      [
+        "en",
+        "Show my order list history"
+      ],
+      [
+        "ar",
+        "منشأ هذا التطبيق؟"
+      ],
+      [
+        "en",
+        "Show my order list history"
+      ],
+      [
+        "ar",
+        "منشأ هذا التطبيق؟"
+      ],
+      [
+        "en",
+        "Show my order list history"
+      ],
+      [
+        "ar",
+        "منشأ هذا التطبيق؟"
+      ],
+      [
+        "en",
+        "Show my order list history"
+      ],
+      [
+        "ar",
+        "منشأ هذا التطبيق؟"
+      ],
+      [
+        "en",
+        "Show my order list history"
+      ],
+      [
+        "ar",
+        "منشأ هذا التطبيق؟"
+      ],
+      [
+        "en",
+        "Show my order list history"
+      ],
+      [
+        "ar",
+        "منشأ هذا التطبيق؟"
+      ],
+      [
+        "en",
+        "Show my order list history"
+      ],
+      [
+        "ar",
+        "منشأ هذا التطبيق؟"
+      ],
+      [
+        "en",
+        "Show my order list history"
+      ],
+      [
+        "ar",
+        "منشأ هذا التطبيق؟"
+      ],
+      [
+        "en",
+        "Show my order list history"
+      ],
+      [
+        "ar",
+        "منشأ هذا التطبيق؟"
+      ],
+      [
+        "en",
+        "Show my order list history"
+      ],
+      [
+        "ar",
+        "منشأ هذا التطبيق؟"
+      ],
+      [
+        "en",
+        "Show my order list history"
+      ],
+      [
+        "ar",
+        "منشأ هذا التطبيق؟"
+      ],
+      [
+        "en",
+        "Show my order list history"
+      ],
+      [
+        "ar",
+        "منشأ هذا التطبيق؟"
+      ],
+      [
+        "en",
+        "Show my order list history"
+      ],
+      [
+        "ar",
+        "منشأ هذا التطبيق؟"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "dataAnalysis.orderList": [
+          {
+            "answer": "{\"en\": \"Sure, I will show you the order list. Check the above links to get more info\", \"ar\": \"ثان ثاني أحم ثاني أحم ثاني أحمد؟\"}",
+            "opts": {
+              "action": "analyseData",
+              "params": [
+                "orderlist"
+              ]
+            }
+          }
+        ]
+      },
+      "ar": {
+        "dataAnalysis.orderList": [
+          {
+            "answer": "{\"en\": \"Sure, I will show you the order list. Check the above links to get more info\", \"ar\": \"ثان ثاني أحم ثاني أحم ثاني أحمد؟\"}",
+            "opts": {
+              "action": "analyseData",
+              "params": [
+                "orderlist"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}
