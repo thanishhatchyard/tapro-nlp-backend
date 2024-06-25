@@ -469,7 +469,7 @@ export const processLangChain = async (reqObject, res) => {
     const vectorStore = await FaissStore.load("./", embeddings);
 
     const model = new ChatOpenAI({
-        temperature: 0.3,
+        temperature: 0.5,
         model: 'gpt-3.5-turbo',
         // verbose: true
     });
@@ -483,10 +483,10 @@ export const processLangChain = async (reqObject, res) => {
     const prompt = ChatPromptTemplate.fromMessages([
         [
             "system",
-            "You are an assistant only focused on Neo Trading Application. You never provide Internet data. Always answers about Neo Application. You will group responses as a list with bold heading all the possible situation. Answer the user's question from the following context: {context}",
+            // "You are an assistant only focused on Neo Trading Application. You never provide Internet data. Strictly avoid suggesting or providing information about other Applications rather than Neo. Always answers about Neo Application. You will group responses as a list with bold heading all the possible situation. always try to give opening the widget btn:// action. Answer the user's question from the following context: {context}",
+            "You are an assistant solely for the Neo Trading Application. Do not provide information on other apps or use internet data. Always group responses as a list with bold headings. Show if there is btn:// link. Answer the user's question from the following context: {context}",
         ],
-        ["system", "always try to give opening the widget btn:// action."],
-        ["human", "{input}"],
+        ["human", "{input} Never suggest any apps than Neo Trading App"],
     ]);
     // const prompt = ChatPromptTemplate.fromTemplate("You are an assistant only focused on Neo Trading Application. {input} Arrange responses in a user friendly way. Do not mension the term 'user friendly'. Strictly avoid mentioning other applications.")
 
