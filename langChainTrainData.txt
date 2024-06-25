@@ -1,86 +1,108 @@
-1.	What is NEO App
-1.1	What is the concept of NEO app?
-1.2	What does NEO app do?
-1.3	What is NEO?
-
-Answer:
-anb capital App (NEO) is an enhanced, user-friendly and easy to navigate interface that effortlessly connects you to the Saudi Exchange and to our dynamic mutual funds. Experience a new era of trading excellence.
-This App will keep you in touch with the ever-changing financial markets and put decision-taking and order-placing ability at your fingertips.
-Monitor the markets and your positions, catch up on the latest news. Open your online trading account today and start trading the main and Nomu Saudi Exchange markets.
-NEO App gives you all the features you need to trade in the Saudi Market. Trade your way with ANB Capital, and react quickly to every opportunity. Trade directly from your Smartphone or Web.
-Link to download App:
-https://play.google.com/store/apps/details?id=com.directfn.mobile.anb_prod&hl=en
 
 
-2.	Founders
-2.1	Which company develop NEO app?
-NEO was built by a Saudi based company called 'DirectFN ' which is an award winning & industry leading Capital Market Solutions Provider
-
-
-3.	Specialty
-3.1	What outstands NEO app from other trading app?
-3.2	What highlights NEO app?
-3.3	What is special in NEO app?
+Questions:
+What is NEO App 
+What is the concept of NEO app? 
+What does NEO app do? 
+What is NEO? 
 
 Answer: 
-Enhanced UI/UX - user-friendly and easy to navigate interface
-Effortless connectivity to the Saudi Exchange and to dynamic mutual funds
-Enhanced and advanced trading features - Conditional orders, Auto invest
-Seamless account opening - Easy and quick account opening process
+anb capital App (NEO) is an enhanced, user-friendly and easy to navigate interface that effortlessly connects you to the Saudi Exchange and to our dynamic mutual funds. Experience a new era of trading excellence. 
+This App will keep you in touch with the ever-changing financial markets and put decision-taking and order-placing ability at your fingertips. 
+Monitor the markets and your positions, catch up on the latest news. Open your online trading account today and start trading the main and Nomu Saudi Exchange markets. 
+NEO App gives you all the features you need to trade in the Saudi Market. Trade your way with ANB Capital and react quickly to every opportunity. Trade directly from your Smartphone or Web. 
 
-If you're vibrant, you're on the move, and you expect excellence.  
-That is why we designed our app to match your aspirations.
-
-Download our app today and begin your journey to growing your portfolio over the long term.  
-We welcome you to the new standard in Saudi brokerage.
+Link to download App: 
+https://play.google.com/store/apps/details?id=com.directfn.mobile.anb_prod&hl=en 
 
 
-4.	Main features
-4.1	What are the key features of NEO app?
-4.2	What promotes NEO app?
-4.3	What are the key features of NEO app?
-4.4	Why we should use NEO app?
+Founders 
+Who built the NEO app? 
+Who is behind NEO app? 
+Who developed the NEO app? 
+Who owns NEO app? 
+Which company built NEO app? 
+Background of NEO app 
+Authenticity of NEO 
 
 Answer: 
-Easy access to portfolio information
-Simple swipes and scrolls will get you to all the information you want to see about your portfolio.
+NEO was built by a Saudi based company called 'DirectFN ' which is an award winning & industry leading Capital Market Solutions Provider, which lifts capital markets by outpacing the advancing financial technology landscape transparently. 
 
-Automated investing
-Schedule your investment orders in advance for any day, week, or month for a predetermined period.
+DirectFN is an Innovative Financial Technology solutions provider having top of the line 20 years of expertise and skills in software development specialized in Capital Markets. With two dedicated development centers for delivering an end-end solution. 
 
-Dynamic watchlists
-Create specialized watchlists for Shariah-compliant stocks or newly listed stocks or growth stocks or ESG stocks.  Monitor market dynamics and track the performance of your favorite stocks. Or simply follow our watchlists, especially curated to keep you informed about investment themes and trends.
+DirectFN is CMMi (Capability Maturity Model Integration) Level 3 certified from CMMi Institute 
 
-Analyst ratings
-Access news and information about Saudi listed companies including analyst ratings and recommendations.
+DirectFN Development Centers are progressing the path of process level improvement training and appraisal program of CMMI (Capability Maturity Model Integration) 
 
-Margin financings
-Request margin financing within the app to enhance your stock buying power.
- 
-Switch to Global Trading at a flick
-Switch over into our global trading platform with a single tap. Our global trading app is your gateway to the world, connecting you to GCC and international markets effortlessly.
+Specialty 
+What outstands NEO app from other trading app? 
+What highlights NEO app? 
+What is special about NEO app? 
 
-A Visual Treat
-The app is especially designed to be easy on your eyes. We created the screens for you to enjoy your trading experience.
+Answer:  
+Enhanced UI/UX - user-friendly and easy to navigate interface 
+Effortless connectivity to the Saudi Exchange and to dynamic mutual funds 
+Enhanced and advanced trading features - Conditional orders, Auto invest 
+Seamless account opening - Easy and quick account opening process 
+If you're vibrant, you're on the move, and you expect excellence.   
+That is why we designed our app to match your aspirations. 
+Download our app today and begin your journey to growing your portfolio over the long term.   
+We welcome you to the new standard in Saudi brokerage. 
 
-Widget Navigations
+Main features 
+What are the key features of NEO app? 
+What promotes NEO app? 
+What are the key features of NEO app? 
+Why we should use NEO app? 
 
-Name: Promotions
-Path: Home > Promotion
-Link to open, view or navigate: btn://open/promotion
-About: The Promotions widget in the Neo trading application showcases special offers, discounts, and events to enhance the trading experience. It provides information on deals like reduced fees, bonus credits, and free trades, as well as upcoming events. The widget personalizes promotions based on user behavior, highlights partner benefits, and alerts users about expiring offers, ensuring they capitalize on valuable opportunities.
-Included Content: discount, sale, offer, special, deal, limited-time, coupon, save, buy one get one, clearance, exclusive, new, launch, bonus, reward, gift, free, trial, membership, upgrade, discount code, VIP, flash sale, event, giveaway, pre-order, early bird, bundle, promotion, benefit, savings.
+Answer:  
+Easy access to portfolio information 
+Simple swipes and scrolls will get you to all the information you want to see about your portfolio. 
+Automated investing 
+Schedule your investment orders in advance for any day, week, or month for a predetermined period. 
+Dynamic watchlists 
+Create specialized watchlists for Shariah-compliant stocks or newly listed stocks or growth stocks or ESG stocks.  Monitor market dynamics and track the performance of your favorite stocks. Or simply follow our watchlists, especially curated to keep you informed about investment themes and trends. 
+Analyst ratings 
+Access news and information about Saudi listed companies including analyst ratings and recommendations. 
+Margin financings 
+Request margin financing within the app to enhance your stock buying power. 
+Switch to Global Trading at a flick 
+Switch over into our global trading platform with a single tap. Our global trading app is your gateway to the world, connecting you to GCC and international markets effortlessly. 
+A Visual Treat 
+The app is especially designed to be easy on your eyes. We created the screens for you to enjoy your trading experience. 
 
-Name: Notifications
-Path: Home > Welcome banner
-Link to open, view or navigate: btn://open/notification
-About: The Notification widget keeps users informed about important updates, alerts, and reminders. It ensures timely communication regarding account activity, system changes, and promotional messages.
-Included Content: alert, update, reminder, notification, message, warning, important, information, system, maintenance, downtime, account, activity, security, change, new feature, update, alert, reminder, deadline, action required, critical, announcement, system update, bug fix, scheduled maintenance, security update
+Application customizations 
+Can I customize NEO application? 
+Can I customize my user profile? 
+
+Answer:  
+
+NEO application provides many customizations in the application level,  
+Trading view dashboard 
+Watchlist customization  
+Two themes supported (Light mode and Dark mode) 
+Multi language support (Arabic and English) 
+Also, NEO app provides User profile editing, where in the User can update his personal information such as email, mobile number, notification preference language. 
+Additionally, he/she can edit/change their profile picture 
+
+NEO app news and promotions 
+Can I use NEO app as an information source? 
+
+Answer:  
+NEO app provides news and announcements related to the Saudi stock market or related to the symbol/company. 
+Symbol news delivers timely updates and articles specifically related to a chosen financial symbol or asset. It keeps users informed about news, events, and developments that impact the chosen symbol, providing insights to aid in informed decision-making for investors. 
+Market news provides users with the latest updates and articles covering relevant financial news and market trends. It delivers insights into global economic events, company announcements, sector-specific developments, and analysis from financial experts, enabling users to stay informed and make informed decisions in their investment strategies. 
+Whereas the Promotions widget showcases special offers, discounts, and events to enhance the trading experience. It provides information on deals like reduced fees, bonus credits, and free trades, as well as upcoming events. The widget personalizes promotions based on user behavior, highlights partner benefits, and alerts users about expiring offers, ensuring they capitalize on valuable opportunities. 
+
+Is there a single widget consisting of all the trading related widgets? 
+Answer: 
+Neo app trading configuration enabled, "One view" provides User with all trade-related widget views in a single screen as a dashboard. 
+This view facilitates the user with Portfolio information, Watchlists, Order list and Quick Trade order ticket 
+Users can enable or disable the "One view" just by swiping a toggle. 
+
+
 
 Question: List down some trading applications
-Answer: We offer Neo Trading App to trade and view stocks. Please refer some internet resource to view about other trading applications.
-
-Question: What is <<name of an app than NEO>>?
 Answer: We offer Neo Trading App to trade and view stocks. Please refer some internet resource to view about other trading applications.
 
 Question: Suggest number of trading applications
@@ -94,3 +116,581 @@ Answer: We offer Neo Trading App to trade and view stocks. Please refer some int
 
 Question: give Trading Applications Similar to Neo
 Answer: We offer Neo Trading App to trade and view stocks. Please refer some internet resource to view about other trading applications.
+
+
+Widget Navigations
+
+Name: Promotions
+Path: Home > Promotion
+About: The Promotions widget in the Neo trading application showcases special offers, discounts, and events to enhance the trading experience. It provides information on deals like reduced fees, bonus credits, and free trades, as well as upcoming events. The widget personalizes promotions based on user behaviour, highlights partner benefits, and alerts users about expiring offers, ensuring they capitalize on valuable opportunities.
+Included Content: discount, offer, special, deal, limited-time, save, exclusive, new, launch, bonus, reward, gift, free, trial, membership, upgrade, discount code, VIP, promotion, benefit, savings
+Link to open, view or navigate: btn://home/promotion
+Tool: btn://home/promotion
+
+Name: Notifications
+Path: Home > Welcome banner
+About: The Notification widget keeps users informed about important updates, alerts, and reminders. It ensures timely communication regarding account activity, system changes, and promotional messages.
+Included Content: alert, update, reminder, notification, message, warning, maintenance, account, activity, security, change, new feature, update, action required, critical, announcement, application update
+Link to open, view or navigate: btn://home/welcome banner
+Tool: btn://home/welcome banner
+
+Name: Account Summary
+Path: Home > Carousel
+About: The Account Summary widget provides users with a concise overview of their account details, including balances, transaction history, and account status. It offers a quick glance at financial information of theirs and helps them monitor their account activity efficiently.
+Included Content: balance, transaction, history, statement, overview, summary, account, details, current balance, available balance, pending transactions, recent activity, deposits, withdrawals, credits, debits
+Link to open, view or navigate: btn://home/carousel
+Tool: btn://home/carousel
+
+Name: Auto Invest
+Path: Home
+About: The Auto Invest widget enables users to automate their investment strategies effortlessly. It simplifies the process of investing by allowing users to set predefined criteria for automatic investments, such as amount, frequency, and target assets.
+Included Content: automate, investment, predefined, criteria, amount, frequency, asset, portfolio, scheduled investments, recurring investments, automatic
+Link to open, view or navigate: btn://home
+Tool: btn://home
+
+Name: Trade Global
+Path: Home
+About: The Trade Global widget empowers users to engage in global trading activities with ease. It facilitates seamless transactions across international markets, providing access to diverse investment opportunities and real-time market updates.
+Included Content: global trading, international markets, investment opportunities, transactions, real-time updates, forex, stocks, commodities, indices
+Link to open, view or navigate: btn://home
+Tool: btn://home
+
+Name: Full Market Watch
+Path: Explore > Popular Lists
+About: The Full Market Watch widget provides users with comprehensive real-time updates and insights across various financial markets. It allows users to monitor a wide range of assets, including stocks, commodities, and indices, facilitating informed investment decisions.
+Included Content: real-time updates, financial markets, stocks, commodities, indices, asset monitoring, investment decisions, market trends, price movements
+Link to open, view or navigate: btn://explore/popular lists
+Tool: btn://explore/popular lists
+
+Name: Favourite WLs or Watchlists
+Path: Explore > Popular Lists
+About: The Favorite Watchlists widget allows users to curate and monitor personalized lists of favorite assets or investments. It enables users to track performance, receive updates, and stay informed about changes/updates that matter most to them.
+Included Content: curate, personalized lists, favorite assets, investments, track performance, financial instruments
+Link to open, view or navigate: btn://explore/popular lists
+Tool: btn://explore/popular lists
+
+Name: Mutual Funds
+Path: Explore > Popular Lists
+About: The Mutual Funds widget provides users with convenient access to information and updates on mutual fund investments. It helps users explore various mutual fund options, track performance, and make informed decisions based on fund details and historical data.
+Included Content: mutual funds, investment options, fund details, historical data, NAV (Net Asset Value), expense ratio
+Link to open, view or navigate: btn://explore/popular lists
+Tool: btn://explore/popular lists
+
+Name: Daily Movers
+Path: Explore > Popular Lists
+About: The Daily Movers widget highlights assets that have shown significant price movements or trading volume changes within a single trading day. It provides users with real-time updates on market movers, helping them identify trends and potential opportunities quickly.
+Included Content: price movements, volume changes, market movers, trends, daily movers
+Link to open, view or navigate: btn://explore/popular lists
+Tool: btn://explore/popular lists
+
+Name: Top Movers
+Path: Explore > Popular Lists
+About: The Top Movers widget showcases assets that have experienced the most significant price changes or trading volume fluctuations recently. It helps users stay updated on market dynamics and identify assets that are trending or experiencing notable activity.
+Included Content: significant price changes, trading volume fluctuations, active trading, recent movements
+Link to open, view or navigate: btn://explore/popular lists
+Tool: btn://explore/popular lists
+
+Name: Top Losers
+Path: Explore > Popular Lists
+About: The Top Losers widget displays assets that have shown the most significant declines in price or trading volume over a recent period. It provides users with insights into assets experiencing downward trends, helping them stay informed about market movements.
+Included Content: significant declines, price drops, trading volume decreases, downward movement
+Link to open, view or navigate: btn://explore/popular lists
+Tool: btn://explore/popular lists
+
+Name: Top Gainers
+Path: Explore > Popular Lists
+About: The Top Gainers widget highlights assets that have experienced the most significant increases in price or trading volume recently. It allows users to quickly identify assets showing upward momentum, providing insights into trending opportunities in the market.
+Included Content: significant price increases, trading volume surges, upward momentum, market trends
+Link to open, view or navigate: btn://explore/popular lists
+Tool: btn://explore/popular lists
+
+Name: Index (Detailed)
+Path: Home/Explore
+About: The Index (Detailed) widget provides users with in-depth information and updates on specific financial indices. It offers comprehensive insights into index performance, and sector breakdowns, enabling informed decision-making about market trends.
+Included Content: financial indices, index performance, sector breakdowns
+Link to open, view or navigate: btn://home/explore
+Tool: btn://home/explore
+
+Name: About Index
+Path: Home/Explore > Index
+About: The About Index widget offers users detailed information and insights into specific financial indices. It provides key details such as index composition, sector weightings, and current trends, empowering informed decision-making in the context of market analysis.
+Included Content: index composition, sector weightings, market analysis
+Link to open, view or navigate: btn://home/explore/index
+Tool: btn://home/explore/index
+
+Name: Statistics
+Path: Home/Explore > Index
+About: The Statistics widget provides users with essential numerical data and metrics relevant to their financial analysis. It offers key statistics such as market performance indicators, historical trends, volatility measures, correlation coefficients, and other quantitative insights, facilitating informed decision-making in investment strategies.
+Included Content: numerical data, market performance indicators, quantitative insights
+Link to open, view or navigate: btn://home/explore/index
+Tool: btn://home/explore/index
+
+Name: Market News
+Path: Explore
+About: The Market News widget provides users with the latest updates and articles covering relevant financial news and market trends. It delivers insights into global economic events, company announcements, sector-specific developments, and analysis from financial experts, enabling users to stay informed and make informed decisions in their investment strategies.
+Included Content: latest updates, financial news, market trends, global economic events, company announcements, sector-specific developments
+Link to open, view or navigate: btn://explore
+Tool: btn://explore
+
+Name: Curated WLs
+Path: Watchlists
+About: The Curated Watchlists widget allows users to access and monitor meticulously selected lists of assets or investments. It provides a curated selection based on specific criteria such as performance, sector, or user preferences, helping users track relevant assets and make informed decisions in their investment strategies.
+Included Content: meticulously selected lists, assets, curated selection, sector, user preferences
+Link to open, view or navigate: btn://watchlists
+Tool: btn://watchlists
+
+Name: Symbol (Detailed)
+Path: Symbol list
+About: The Symbol (Detailed) widget provides users with comprehensive details and insights into specific financial symbols or assets. It offers in-depth information such as current prices, historical performance, trading volumes, and company fundamentals, empowering users to conduct thorough analysis and make informed investment decisions.
+Included Content: comprehensive details, insights, specific financial symbols, assets, current price, historical performance, trading volumes, company fundamentals
+Link to open, view or navigate: btn://symbol list
+Tool: btn://symbol list
+
+Name: About Symbol
+Path: Symbol list > Symbol details
+About: The About Symbol widget offers users detailed information and insights into specific financial symbols or assets. It provides essential details such as symbol description and company background
+Included Content: detailed information, insights, specific financial symbols, symbol information, company background
+Link to open, view or navigate: btn://symbol list/symbol details
+Tool: btn://symbol list/symbol details
+
+Name: Statistics
+Path: Symbol list > Symbol details
+About: The Statistics widget provides users with essential numerical data and metrics relevant to a particular Symbol. It offers key statistics such as market performance indicators, and other important quantitative insights
+Included Content: numerical data, market performance indicators, quantitative insights
+Link to open, view or navigate: btn://symbol list/symbol details
+Tool: btn://symbol list/symbol details
+
+Name: Market Depth
+Path: Symbol list > Symbol details
+About: The Market Depth widget displays real-time information about the buy and sell orders for a specific asset or financial instrument. It provides insights into the current market liquidity, order book dynamics, price levels with corresponding volumes, and helps traders assess market sentiment and potential price movements.
+Included Content: real-time information, market liquidity, order book dynamics, price levels, volumes, market sentiment
+Link to open, view or navigate: btn://symbol list/symbol details
+Tool: btn://symbol list/symbol details
+
+Name: Time and Sales
+Path: Symbol list > Symbol details
+About: The Time and Sales widget provides users with detailed transaction data for a specific asset or financial instrument in real-time. It displays information such as trade prices, volumes, timestamps offering insights into market activity and helping traders make informed decisions based on transaction history.
+Included Content: transaction data, real-time updates, trade prices, volumes, timestamps
+Link to open, view or navigate: btn://symbol list/symbol details
+Tool: btn://symbol list/symbol details
+
+Name: Symbol News
+Path: Symbol list > Symbol details
+About: The Symbol News widget delivers timely updates and articles specifically related to a chosen financial symbol or asset. It keeps users informed about news, events, and developments that impact the chosen symbol, providing insights to aid in informed decision-making for investors.
+Included Content: timely updates, financial symbol news, symbol updates, impact analysis
+Link to open, view or navigate: btn://symbol list/symbol details
+Tool: btn://symbol list/symbol details
+
+Name: Earnings
+Path: Symbol list > Symbol details
+About: The Earnings widget provides users with updates and insights into earnings reports and the financial performance of companies. It offers information such as earnings per share (EPS), revenue figures, profit margins, and guidance, helping investors stay informed about corporate earnings and make informed decisions based on financial results.
+Included Content: earnings reports, financial performance, earnings per share (EPS), profit margins, earning opinion
+Link to open, view or navigate: btn://symbol list/symbol details
+Tool: btn://symbol list/symbol details
+
+Name: Related Stocks
+Path: Symbol list > Symbol details
+About: The Related Stocks widget helps users discover and explore stocks that are related to a specific sector. It provides suggestions based on similarities in industry, market segment, or other relevant criteria, facilitating broader research and investment decision-making.
+Included Content: discover stocks, explore related stocks, industry similarities, investment research
+Link to open, view or navigate: btn://symbol list/symbol details
+Tool: btn://symbol list/symbol details
+
+Name: Your Positions
+Path: Home > Stock holdings > Symbol details
+About: The Your Positions widget displays information about the assets or investments currently held in a user's portfolio. It provides details such as asset names, quantities held, current market values, and performance metrics, allowing users to track their positions and monitor portfolio performance effectively.
+Included Content: portfolio holdings, asset details, quantities held, current market values, performance metrics
+Link to open, view or navigate: btn://home/stock holdings > symbol details
+Tool: btn://home/stock holdings > symbol details
+
+Name: Your Recent Activity
+Path: Home > Stock holdings > Symbol details
+About: The Your Recent Activity widget shows users a summary of their recent interactions or transactions within the application. It provides details such as recent trades, account updates, deposits, withdrawals, or other relevant activities, enabling users to review recent actions and stay updated on account activities.
+Included Content: recent interactions, transactions summary, recent trades, deposits, withdrawals
+Link to open, view or navigate: btn://home/stock holdings > symbol details
+Tool: btn://home/stock holdings > symbol details
+
+Name: Buy Order Ticket
+Path: Quick menu/Symbol details
+About: The Buy Order Ticket widget facilitates users in placing purchase orders for assets or investments within the application. It allows users to specify details such as asset quantity, price, and order type (e.g., market or limit), enabling seamless execution of buying transactions.
+Included Content: Place orders, asset quantity, price, order type, market order, limit order
+Link to open, view or navigate: btn://quick menu/symbol details
+Tool: btn://quick menu/symbol details
+
+Name: Sell Order Ticket
+Path: Quick menu/Symbol details
+About: The Sell Order Ticket widget enables users to place sell orders for assets or investments directly within the application. It allows users to specify details such as asset quantity, price, and order type (e.g., market or limit), facilitating efficient execution of selling transactions.
+Included Content: sell orders, available quantity, offer price, order type, market order, limit order
+Link to open, view or navigate: btn://quick menu/symbol details
+Tool: btn://quick menu/symbol details
+
+Name: Advanced Order Settings
+Path: Order Ticket
+About: The Advanced Order Settings widget empowers users to customize and set advanced parameters for their trading orders within the application. It allows users to define conditions such as stop-loss, take-profit, trailing stop, and order expiry, enhancing control and flexibility in executing trading strategies.
+Included Content: customize orders, advanced parameters, stop-loss, take-profit, trailing stop, order expiry
+Link to open, view or navigate: btn://order ticket
+Tool: btn://order ticket
+
+Name: Conditional Orders
+Path: Order Ticket
+About: The Conditional Orders widget allows users to set automated conditions for executing trading orders based on predefined criteria. It enables users to specify conditions such as price triggers, time frames, and order types (e.g., stop-loss, take-profit), providing flexibility and automation in managing investment positions.
+Included Content: automated conditions, trading orders, predefined criteria, price triggers, time frames, order types
+Link to open, view or navigate: btn://order ticket
+Tool: btn://order ticket
+
+Name: User Profile
+Path: More > My Account > User Profile
+About: The User Profile widget displays essential information about the user's account and settings within the application. It includes personal information, and notification preferences, change profile pictures, enabling users to manage and customize their experience effectively.
+Included Content: account details, personal information, personal preferences
+Link to open, view or navigate: btn://more/my account > user profile
+Tool: btn://more/my account > user profile
+
+Name: Edit Profile Picture
+Path: More > My Account > User Profile
+About: The Edit Profile Picture widget allows users to update their profile image within the application. It provides a simple interface to upload, crop, and set a new profile picture, ensuring users can personalize their account and enhance their user experience.
+Included Content: update profile image, upload, crop, set profile picture
+Link to open, view or navigate: btn://more/my account > user profile
+Tool: btn://more/my account > user profile
+
+Name: Rights Subscription
+Path: More > My Account > Rights Subscription
+About: The Rights Subscription widget facilitates users in subscribing to rights offerings within the application. It allows users to review details such as subscription terms, and allocation options, ensuring seamless participation in rights issues.
+Included Content: rights offerings, subscription terms, allocation options
+Link to open, view or navigate: btn://more/my account > rights subscription
+Tool: btn://more/my account > rights subscription
+
+Name: Investment Accounts
+Path: More > My Account > Investment Accounts
+About: The Investment Accounts widget provides users with an overview of their various investment accounts within the application. It includes details such as account types, and balances, allowing users to transfer money between two investments effectively.
+Included Content: investment accounts, account types, balances, investment history
+Link to open, view or navigate: btn://more/my account > investment accounts
+Tool: btn://more/my account > investment accounts
+
+Name: Deposit Instructions
+Path: More > My Account > Investment Accounts
+About: The Deposit Instructions widget guides users on how to deposit funds into their accounts within the application. It provides step-by-step instructions, including payment methods, account details, and any necessary documentation, ensuring a smooth and secure deposit process.
+Included Content: deposit funds, account details, step-by-step instructions
+Link to open, view or navigate: btn://more/my account > investment accounts
+Tool: btn://more/my account > investment accounts
+
+Name: Investment Account Transfer
+Path: More > Cash and Margin > Transfer >
+About: The Investment Account Transfer widget facilitates users in transferring their money between two investment accounts. It provides options to initiate transfers, specify the amount and Portfolio, and track transfer status, ensuring efficient management of investment portfolios.
+Included Content: transfer assets, investment accounts, track transfer status
+Link to open, view or navigate: btn://more/cash and margin > transfer >
+Tool: btn://more/cash and margin > transfer >
+
+Name: Inv. Acc. Transfer History
+Path: More > My Account > Investment Accounts >
+About: The Investment Account Transfer History widget provides users with a detailed record of all past transfers between their investment accounts within the application. It includes information such as dates, amounts, and transfer status, enabling users to review and track their transfer activities efficiently.
+Included Content: transfer history, past transfers, dates, amounts, transfer statuses, track transfers
+Link to open, view or navigate: btn://more/my account > investment accounts >
+Tool: btn://more/my account > investment accounts >
+
+Name: Bank Accounts
+Path: More > My Account > Bank Accounts
+About: The Bank Accounts widget displays users' linked bank accounts within the application. It provides details such as account numbers, account types, linked institutions
+Included Content: linked bank accounts, account numbers, account types, linked institutions
+Link to open, view or navigate: btn://more/my account > bank accounts
+Tool: btn://more/my account > bank accounts
+
+Name: Add New Bank Account
+Path: More > My Account > Bank Accounts
+About: The Add New Bank Account widget allows users to securely add a new bank account to their profile. It guides users through the process of entering account details, and bank details, verifying information, and completing necessary security measures.
+Included Content: add new bank account, enter account details, verify information, complete security measures
+Link to open, view or navigate: btn://more/my account > bank accounts
+Tool: btn://more/my account > bank accounts
+
+Name: Update KYC
+Path: More > My Account > Update KYC
+About: The Update KYC widget guides users through the process of updating their Know Your Customer (KYC) information within the application.
+Included Content: update KYC information, verify details, regulatory compliance
+Link to open, view or navigate: btn://more/my account > update kyc
+Tool: btn://more/my account > update kyc
+
+Name: Tadawulaty
+Path: More > My Account > Tadawulaty
+About: Navigate User to an external, to the Tadawulaty official site
+Included Content: Tadawulaty website
+Link to open, view or navigate: btn://more/my account > tadawulaty
+Tool: btn://more/my account > tadawulaty
+
+Name: Stock Statement
+Path: More > My Account > Stock Statement
+About: The Stock Statement widget provides users with a detailed overview of their stock holdings within the application. It includes information such as stock names, quantities held, current market values, and overall portfolio performance metrics, enabling users to track and manage their investments effectively.
+Included Content: stock holdings, quantities held, market values, portfolio performance
+Link to open, view or navigate: btn://more/my account > stock statement
+Tool: btn://more/my account > stock statement
+
+Name: Cash Statement
+Path: More > My Account > Cash Statement
+About: The Cash Statement widget displays users' cash balances and transactions within the application. It provides details such as current cash balance, transaction history, deposits, withdrawals, and other financial activities, enabling users to monitor their liquidity and financial transactions effectively.
+Included Content: cash balances, transaction history, deposits, withdrawals, financial activities
+Link to open, view or navigate: btn://more/my account > cash statement
+Tool: btn://more/my account > cash statement
+
+Name: Annual Statement
+Path: More > My Account > Annual Statement
+About: The Annual Statement widget provides users with a comprehensive summary of their financial activities and account performance for the past year within the application. It includes details such as annual earnings, expenses, investment returns, tax information, and other financial metrics, helping users review their financial health and plan for the future effectively.
+Included Content: financial activities summary, account performance, annual earnings, expenses, investment returns, tax information
+Link to open, view or navigate: btn://more/my account > annual statement
+Tool: btn://more/my account > annual statement
+
+Name: Change Password
+Path: More > My Account > Change Password
+About: The Change Password widget allows users to securely update their account password within the application. It guides users through the process of entering a new password, verifying the change, and ensuring account security with strong authentication measures.
+Included Content: update password, enter new password, verify change, ensure account security
+Link to open, view or navigate: btn://more/my account > change password
+Tool: btn://more/my account > change password
+
+Name: Close Account
+Path: More > My Account > Close Account
+About: The Close Account widget guides users through the process of securely closing their account within the application. It provides instructions for confirming the closure, transferring remaining balances, and completing any necessary steps to ensure account closure is handled smoothly and securely.
+Included Content: close account, confirm closure, transfer remaining balances, ensure account closure
+Link to open, view or navigate: btn://more/my account > close account
+Tool: btn://more/my account > close account
+
+Name: Cash and Margin
+Path: More > Cash and Margin
+About: The Cash and Margin widget provides users with an overview of their account balances and margin trading capabilities within the application. It displays details such as available cash balances, margin utilization, borrowing limits, and collateral requirements, enabling users to manage their trading activities and leverage effectively.
+Included Content: account balances overview, margin trading capabilities, available cash balances, margin utilization, borrowing limits
+Link to open, view or navigate: btn://more/cash and margin
+Tool: btn://more/cash and margin
+
+Name: Cash Transfer History
+Path: More > Cash and Margin > All History
+About: The Cash Transfer History widget displays users' transaction history related to cash transfers within the application. It provides details such as transfer dates, amounts, transaction types (e.g., deposits, withdrawals), and transaction statuses, allowing users to track their financial activities and manage their funds efficiently.
+Included Content: transaction history, cash transfers, transfer dates, amounts, transaction types, statuses
+Link to open, view or navigate: btn://more/cash and margin > all history
+Tool: btn://more/cash and margin > all history
+
+Name: Add cash account
+Path: More > Cash and Margin > Transfer
+About: The Add Cash Account widget allows users to securely add a new cash account to their profile within the application. It guides users through entering account details, verifying information, and completing any necessary security measures to ensure seamless integration of additional cash management options.
+Included Content: add new cash account, enter account details, verify information, complete security measures
+Link to open, view or navigate: btn://more/cash and margin > transfer
+Tool: btn://more/cash and margin > transfer
+
+Name: Quick Transfer
+Path: More > Cash and Margin > Transfer >
+About: The Quick Transfer widget enables users to swiftly transfer funds between accounts or make payments within the application. It offers a streamlined process for initiating transfers, specifying amounts, selecting recipients, and confirming transactions, ensuring efficient financial transactions.
+Included Content: transfer funds, make payments, streamlined process, specify amounts, select recipients
+Link to open, view or navigate: btn://more/cash and margin > transfer >
+Tool: btn://more/cash and margin > transfer >
+
+Name: Local Transfer
+Path: More > Cash and Margin > Transfer >
+About: The Local Transfer widget facilitates users in conducting local fund transfers within the application. It allows users to initiate transfers between accounts or to other users within the same financial institution or network. Users can specify transfer details such as amounts, recipients, and transaction purposes, ensuring convenient and secure local transactions.
+Included Content: local fund transfers, initiate transfers, specify amounts, recipients, transaction purposes
+Link to open, view or navigate: btn://more/cash and margin > transfer >
+Tool: btn://more/cash and margin > transfer >
+
+Name: Margin Lending
+Path: More > Cash and Margin > Margin
+About: The Margin Lending widget in the application allows users to access margin trading capabilities. It provides details such as borrowing limits, interest rates, collateral requirements, and margin utilization. This widget enables users to effectively manage and monitor their leveraged trading activities.
+Included Content: margin trading capabilities, borrowing limits, interest rates, collateral requirements, leverage management
+Link to open, view or navigate: btn://more/cash and margin > margin
+Tool: btn://more/cash and margin > margin
+
+Name: Apply For Margin
+Path: More > Cash and Margin > Margin >
+About: The Apply For Margin widget enables users to apply for margin trading privileges within the application. It guides users through the application process, providing information on eligibility criteria, required documentation, and approval timelines. This widget facilitates access to leverage for trading activities.
+Included Content: margin trading privileges, application process, eligibility criteria, required documentation
+Link to open, view or navigate: btn://more/cash and margin > margin >
+Tool: btn://more/cash and margin > margin >
+
+Name: Transfers
+Path: More > Transfers
+About: The Transfers widget allows users to manage fund transfers efficiently within the application. It provides options to initiate transfers between accounts, to other users, or to external accounts. Users can specify transfer details such as amounts, recipients, and transaction purposes, ensuring convenient and secure transactions.
+Included Content: fund transfers, initiate transfers, specify amounts, recipients, transaction purposes
+Link to open, view or navigate: btn://more/transfers
+Tool: btn://more/transfers
+
+Name: Holdings
+Path: More > Holdings
+About: The Holdings widget displays users' current holdings of assets within the application. It provides details such as asset names, quantities held, current market values, and overall portfolio performance metrics, allowing users to monitor their investments effectively.
+Included Content: current holdings, asset names, quantities held, market values, portfolio performance
+Link to open, view or navigate: btn://more/holdings
+Tool: btn://more/holdings
+
+Name: Order List
+Path: More > Orders
+About: The Order List widget presents users with a detailed view of their current orders within the application. It includes information such as order types (e.g., market, limit), asset names, quantities, prices, and order statuses (e.g., pending, filled). This allows users to manage their trading activities efficiently by tracking and adjusting their orders as needed.
+Included Content: current orders, order types, asset names, quantities, prices, order statuses
+Link to open, view or navigate: btn://more/orders
+Tool: btn://more/orders
+
+Name: Saved Orders
+Path: More > Orders > Saved
+About: The Saved Orders widget allows users to store and manage their saved trading orders within the application. It enables users to view details such as order types (e.g., market, limit), asset names, quantities, prices, and order statuses. This functionality helps users execute trades quickly and efficiently by accessing pre-saved order parameters.
+Included Content: saved trading orders, order types, asset names, quantities, prices, order statuses
+Link to open, view or navigate: btn://more/orders > saved
+Tool: btn://more/orders > saved
+
+Name: Scheduled Orders
+Path: More > Orders > Scheduled
+About: The Scheduled Orders widget enables users to set and manage scheduled trading orders within the application. It allows users to specify details such as order types (e.g., market, limit), asset names, quantities, prices, and execution dates. This feature helps users automate their trading strategies and execute orders at predetermined times.
+Included Content: scheduled trading orders, order types, asset names, quantities, prices, execution dates
+Link to open, view or navigate: btn://more/orders > scheduled
+Tool: btn://more/orders > scheduled
+
+Name: Order Search
+Path: More > Order Search
+About: The Order Search widget allows users to search and retrieve specific trading orders within the application. It provides functionalities to filter orders based on criteria such as order types (e.g., market, limit), asset names, quantities, prices, and order statuses. This feature enables users to efficiently track and manage their trading activities.
+Included Content: search trading orders, filter criteria, order types, asset names, quantities, prices, order statuses
+Link to open, view or navigate: btn://more/order search
+Tool: btn://more/order search
+
+Name: Conditional Orders
+Path: More > Order Search > Conditional
+About: The Conditional Orders widget enables users to set automated conditions for executing trading orders based on predefined criteria within the application. It allows users to specify conditions such as price triggers, time frames, and order types (e.g., stop-loss, take-profit), providing flexibility and automation in managing investment positions.
+Included Content: automated conditions, trading orders, predefined criteria, price triggers, time frames, order types
+Link to open, view or navigate: btn://more/order search > conditional
+Tool: btn://more/order search > conditional
+
+Name: Tradable Orders
+Path: More > Order Search > Tradable
+About: desctiption about the widget
+Included Content: included contents seperated each by commas
+Link to open, view or navigate: btn://more/order search > tradable
+Tool: btn://more/order search > tradable
+
+Name: Gain and Loss
+Path: More > Gain and Loss
+About: The Gain and Loss widget provides users with a summary of their investment performance within the application. It displays details such as realized and unrealized gains or losses, overall portfolio performance metrics, and historical trends. This widget helps users track their investment profitability and make informed decisions.
+Included Content: investment performance summary, realized gains, unrealized losses, portfolio performance metrics
+Link to open, view or navigate: btn://more/gain and loss
+Tool: btn://more/gain and loss
+
+Name: Mutual Funds
+Path: More > Mutual Funds
+About: The Mutual Funds widget allows users to view and manage their mutual fund investments within the application. It provides details such as fund names, NAV (Net Asset Value), daily performance, fund manager details, and investment objectives. This widget helps users monitor their mutual fund portfolio and make informed investment decisions.
+Included Content: mutual fund investments, fund names, NAV, daily performance, fund manager details
+Link to open, view or navigate: btn://more/mutual funds
+Tool: btn://more/mutual funds
+
+Name: Update Risk Profile
+Path: More > Mutual Funds > Fund List
+About: The Update Risk Profile widget allows users to revise and update their risk assessment and investment preferences within the application. It guides users through the process of evaluating risk tolerance, investment goals, and time horizon, ensuring that their investment strategies align with current financial objectives.
+Included Content: revise risk assessment, update investment preferences, evaluate risk tolerance, investment goals
+Link to open, view or navigate: btn://more/mutual funds > fund list
+Tool: btn://more/mutual funds > fund list
+
+Name: MF Transactions
+Path: More > Mutual Funds > Transactions
+About: The MF Transactions widget enables users to view and manage their mutual fund transactions within the application. It provides details such as transaction types (e.g., purchase, redemption), fund names, transaction dates, amounts, and transaction statuses. This widget facilitates tracking and monitoring of mutual fund activities for effective portfolio management.
+Included Content: mutual fund transactions, transaction types, fund names, transaction dates, amounts
+Link to open, view or navigate: btn://more/mutual funds > transactions
+Tool: btn://more/mutual funds > transactions
+
+Name: MF Holdings
+Path: More > Mutual Funds > Holdings
+About: The MF Holdings widget displays users' current holdings of mutual funds within the application. It provides details such as fund names, quantities held, NAV (Net Asset Value), and overall portfolio allocation. This widget helps users monitor their mutual fund investments and assess their portfolio diversification.
+Included Content: current mutual fund holdings, fund names, quantities held, NAV, portfolio allocation
+Link to open, view or navigate: btn://more/mutual funds > holdings
+Tool: btn://more/mutual funds > holdings
+
+Name: Alerts
+Path: More > Alerts Management
+About: The Alerts widget allows users to set and manage personalized alerts within the application. It enables users to create alerts based on criteria such as price movements, news updates, or specific events related to their investments. This widget helps users stay informed and take timely actions based on market developments.
+Included Content: personalized alerts, set alerts, price movements, news updates, investment events
+Link to open, view or navigate: btn://more/alerts management
+Tool: btn://more/alerts management
+
+Name: Add New Alert
+Path: More > Alerts Management
+About: The Add New Alert widget enables users to create customized alerts within the application. It guides users through the process of setting alert criteria such as price thresholds, news updates, or specific events related to their investments. This feature helps users stay informed and manage their portfolios effectively.
+Included Content: create customized alerts, set alert criteria, price thresholds, news updates
+Link to open, view or navigate: btn://more/alerts management
+Tool: btn://more/alerts management
+
+Name: One login
+Path: More > One Login
+About: desctiption about the widget
+Included Content: included contents seperated each by commas
+Link to open, view or navigate: btn://more/one login
+Tool: btn://more/one login
+
+Name: Marginable symbols
+Path: More > Marginable Symbols
+About: The Marginable Symbols widget provides users with a list of securities eligible for margin trading within the application. It displays details such as symbol names, margin requirements, current prices, and trading statuses. This widget helps users identify and select securities suitable for leveraging their trading activities.
+Included Content: margin trading eligible securities, symbol names, margin requirements, current prices, trading statuses
+Link to open, view or navigate: btn://more/marginable symbols
+Tool: btn://more/marginable symbols
+
+Name: IPO Symbol List
+Path: More > IPO
+About: The IPO Symbol List widget displays a comprehensive list of symbols for initial public offerings (IPOs) available for trading within the application. It includes details such as IPO company names, symbol tickers, offering prices, and trading statuses. This widget helps users track and participate in IPOs effectively.
+Included Content: IPO symbol list, IPO company names, symbol tickers, offering prices, trading statuses
+Link to open, view or navigate: btn://more/ipo
+Tool: btn://more/ipo
+
+Name: IPO Subscription Requests
+Path: More > IPO > subscription requests
+About: The IPO Subscription Requests widget allows users to manage their subscription requests for initial public offerings (IPOs) within the application. It enables users to view details such as subscribed quantities, allotment statuses, payment instructions, and subscription deadlines. This widget facilitates efficient management of IPO participation.
+Included Content: manage IPO subscriptions, subscribed quantities, allotment statuses, payment instructions
+Link to open, view or navigate: btn://more/ipo > subscription requests
+Tool: btn://more/ipo > subscription requests
+
+Name: All IPO Orders
+Path: More > IPO > All IPO orders
+About: The All IPO Orders widget provides users with a comprehensive view of all their orders placed for initial public offerings (IPOs) within the application. It includes details such as order types (e.g., market, limit), subscribed quantities, order statuses (e.g., pending, filled), and transaction histories. This widget helps users track and manage their IPO orders effectively.
+Included Content: IPO orders overview, order types, subscribed quantities, order statuses, transaction histories
+Link to open, view or navigate: btn://more/ipo > all ipo orders
+Tool: btn://more/ipo > all ipo orders
+
+Name: IPO Symbol Past Performance
+Path: More > IPO > IPO symbol past performance
+About: The IPO Symbol Past Performance widget provides users with historical performance data of symbols from initial public offerings (IPOs) within the application. It displays details such as past trading prices, volume trends, price fluctuations since IPO launch, and key performance indicators. This widget helps users analyze the historical performance of IPOs and make informed investment decisions.
+Included Content: historical performance data, IPO symbols, trading prices, volume trends, price fluctuations
+Link to open, view or navigate: btn://more/ipo > ipo symbol past performance
+Tool: btn://more/ipo > ipo symbol past performance
+
+Name: Help Center
+Path: More > Help and Support
+About: The Help Center widget serves as a comprehensive resource for users within the application. It provides access to FAQs, guides, troubleshooting steps, and customer support contact information. Users can find answers to common queries and receive assistance for any issues they encounter while using the application.
+Included Content: FAQs, guides, troubleshooting, customer support
+Link to open, view or navigate: btn://more/help and support
+Tool: btn://more/help and support
+
+Name: ANB Lite
+Path: More > Trading Configuration
+About: desctiption about the widget
+Included Content: included contents seperated each by commas
+Link to open, view or navigate: btn://more/trading configuration
+Tool: btn://more/trading configuration
+
+Name: Theme Change
+Path: More > Appearance
+About: The Theme Change widget allows users to customize the visual appearance of the application interface. It provides options to switch between different themes, such as light or dark modes, and adjust color schemes to suit personal preferences. This widget enhances user experience by offering flexibility in the application's visual presentation.
+Included Content: customize interface themes, switch themes, light mode, dark mode
+Link to open, view or navigate: btn://more/appearance
+Tool: btn://more/appearance
+
+Name: App Settings
+Path: More > App Settings
+About: The App Settings widget enables users to manage and customize various application settings according to their preferences. It provides options to adjust account preferences, notification settings, security features, and other personalization options. This widget ensures users can tailor their experience to meet their specific needs and enhance usability.
+Included Content: manage application settings, customize preferences, adjust notifications, enhance usability
+Link to open, view or navigate: btn://more/app settings
+Tool: btn://more/app settings
+
+Name: Language Change
+Path: More > App Settings > Application Settings
+About: The Language Change widget allows users to switch the application's language to their preferred language. It provides options to select from a list of supported languages, ensuring that users can interact with the application in their preferred language for a better user experience.
+Included Content: switch application language, select preferred language
+Link to open, view or navigate: btn://more/app settings > application settings
+Tool: btn://more/app settings > application settings
+
+Name: Clear App Cache
+Path: More > App Settings > Troubleshooting
+About: The Clear App Cache widget allows users to delete temporary files and data stored by the application. It helps improve app performance and resolve issues related to cached data. Users can clear cache selectively or completely, ensuring smooth operation of the application.
+Included Content: delete temporary files, improve app performance
+Link to open, view or navigate: btn://more/app settings > troubleshooting
+Tool: btn://more/app settings > troubleshooting
+
+Name: Disclaimer/T&C/Privacy policy
+Path: More
+About: The Disclaimer/T&C/Privacy Policy widget provides users with access to legal documents governing the use of the application. It includes terms of service, privacy policies, disclaimers, and other important agreements. Users can review these documents to understand their rights and responsibilities while using the application.
+Included Content: terms of service, privacy policies, disclaimers
+Link to open, view or navigate: btn://more
+Tool: btn://more
+

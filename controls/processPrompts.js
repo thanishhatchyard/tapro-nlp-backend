@@ -424,7 +424,7 @@ export const getFromAssistantModified = async (reqObject) => {
 
 import { ChatOpenAI } from "@langchain/openai";
 import { HumanMessage, SystemMessage } from "@langchain/core/messages";
-import { StringOutputParser } from "@langchain/core/output_parsers";
+import { StringOutputParser, JsonOutputParser } from "@langchain/core/output_parsers";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
 import { TextLoader } from "langchain/document_loaders/fs/text";
 import { FaissStore } from "@langchain/community/vectorstores/faiss";
@@ -433,10 +433,43 @@ import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
 import { RetrievalQAChain, loadQAStuffChain } from "langchain/chains";
 import { createRetrievalChain } from "langchain/chains/retrieval";
 import { createStuffDocumentsChain } from "langchain/chains/combine_documents";
+import { writeFile } from 'fs/promises';
+import { commonQuestionAndAnswers, intro } from '../uploads/data.js';
 
 export const processLangChainTrain = async (reqObject) => {
+    let excelData = await csvReader('./navs.csv');
     let prompt = reqObject.prompt;
     let responseData = '';
+    //     let navigations = '';
+
+    //     excelData.forEach(dt => {
+    //         if (dt["Widget to Navigate"]) {
+    //             navigations += `
+    // Name: ${dt["Widget to Navigate"]}
+    // Path: ${dt["Navigation Path"]}
+    // About: ${dt["About Widget"]}
+    // Included Content: ${dt["Included Contents"]}
+    // Link to open, view or navigate: btn://${dt["Navigation Path"].replace(' > ', '/').toLowerCase()}
+    // Tool: btn://${dt["Navigation Path"].replace(' > ', '/').toLowerCase()}
+    // `;
+    //         }
+    //     })
+
+    //     let fileData = `
+    // ${intro}
+
+    // ${commonQuestionAndAnswers}
+
+    // Widget Navigations
+    // ${navigations}
+    // `
+
+    //     try {
+    //         await writeFile('./out.txt', fileData, 'utf8');
+    //         console.log('File written successfully');
+    //     } catch (err) {
+    //         console.error('Error writing to file:', err);
+    //     }
 
     const loader = new TextLoader("./langChainTrainData.txt");
 
@@ -450,7 +483,6 @@ export const processLangChainTrain = async (reqObject) => {
     const splitter = new RecursiveCharacterTextSplitter();
 
     const documents = await splitter.splitDocuments(docs);
-    console.log(documents);
 
     const embeddings = new OpenAIEmbeddings();
 
@@ -469,7 +501,7 @@ export const processLangChain = async (reqObject, res) => {
     const vectorStore = await FaissStore.load("./", embeddings);
 
     const model = new ChatOpenAI({
-        temperature: 0.5,
+        temperature: 0.8,
         model: 'gpt-3.5-turbo',
         // verbose: true
     });
@@ -484,9 +516,9 @@ export const processLangChain = async (reqObject, res) => {
         [
             "system",
             // "You are an assistant only focused on Neo Trading Application. You never provide Internet data. Strictly avoid suggesting or providing information about other Applications rather than Neo. Always answers about Neo Application. You will group responses as a list with bold heading all the possible situation. always try to give opening the widget btn:// action. Answer the user's question from the following context: {context}",
-            "You are an assistant solely for the Neo Trading Application. Do not provide information on other apps or use internet data. Always group responses as a list with bold headings. Show if there is btn:// link. Answer the user's question from the following context: {context}",
+            "You are an assistant solely for the Neo Trading Application. Do not provide information on other apps. Don't use internet data. Don't suggest any apps than Neo Trading App. Group responses as a list with bold headings. Give if there is tool or link. Answer the user's question from the following context: {context}",
         ],
-        ["human", "{input} Never suggest any apps than Neo Trading App"],
+        ["human", "{input}"],
     ]);
     // const prompt = ChatPromptTemplate.fromTemplate("You are an assistant only focused on Neo Trading Application. {input} Arrange responses in a user friendly way. Do not mension the term 'user friendly'. Strictly avoid mentioning other applications.")
 
@@ -528,4 +560,49 @@ export const processLangChain = async (reqObject, res) => {
     }
 
     res.end();
+}
+
+export const processNonStreamResponse = async (reqObject, res) => {
+    let inputMessage = reqObject.prompt;
+    let responseData = '';
+
+    const embeddings = new OpenAIEmbeddings();
+    const vectorStore = await FaissStore.load("./", embeddings);
+
+    const model = new ChatOpenAI({
+        temperature: 0.5,
+        model: 'gpt-3.5-turbo',
+    });
+
+
+    const prompt = ChatPromptTemplate.fromMessages([
+        [
+            "system",
+            "You are an assistant solely for the Neo Trading Application. Do not provide information on other apps or use internet data. Always group responses as a list with bold headings. Show if there is btn:// link. Answer the user's question from the following context: {context}",
+        ],
+        ["system", "Return response as JSON if there is tool, Give the summary as answer property as tool property"],
+        ["human", "{input} Never suggest any apps than Neo Trading App"],
+    ]);
+
+    const chain = await createStuffDocumentsChain({
+        llm: model,
+        prompt,
+    });
+
+    const retriever = vectorStore.asRetriever({ k: 2 });
+
+    const retrievalChain = await createRetrievalChain({
+        combineDocsChain: chain,
+        retriever
+    });
+
+    const response = await retrievalChain.invoke({
+        input: inputMessage
+    });
+
+    const parser = new JsonOutputParser();
+    const parsedResponse = await parser.parse(response.answer);
+
+
+    res.json({ parsedResponse });
 }

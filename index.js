@@ -2,7 +2,7 @@ import 'dotenv/config';
 import express from "express";
 import cors from 'cors'
 import { trainGPT, trainMenuSearchModel, trainModel, updateFineTuneModel } from "./controls/trainModel.js";
-import { getFromAssistant, getFromAssistantModified, getJSONData, getPromptResponse, getResponseFromGPT, processLangChain, processLangChainTrain } from "./controls/processPrompts.js";
+import { getFromAssistant, getFromAssistantModified, getJSONData, getPromptResponse, getResponseFromGPT, processLangChain, processLangChainTrain, processNonStreamResponse } from "./controls/processPrompts.js";
 import { processSuggestion } from './controls/processSuggestions.js';
 
 const app = express();
@@ -161,6 +161,18 @@ app.post('/suggestion', async (req, res) => {
         return res.json({ message: "Processing Complete!", response });
     }
 });
+
+app.post('/retriew', async (req, res) => {
+    let response;
+
+    try {
+        response = await processNonStreamResponse(req.body, res);
+    } catch (error) {
+        response = error.toString();
+        return res.json({ message: "Processing Complete!", response });
+    }
+});
+
 
 app.listen(PORT, () => {
     console.log(`Express server running at http://localhost:${PORT}/`);
