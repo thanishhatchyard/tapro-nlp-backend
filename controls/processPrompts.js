@@ -440,36 +440,36 @@ export const processLangChainTrain = async (reqObject) => {
     let excelData = await csvReader('./navs.csv');
     let prompt = reqObject.prompt;
     let responseData = '';
-    //     let navigations = '';
+        let navigations = '';
 
-    //     excelData.forEach(dt => {
-    //         if (dt["Widget to Navigate"]) {
-    //             navigations += `
-    // Name: ${dt["Widget to Navigate"]}
-    // Path: ${dt["Navigation Path"]}
-    // About: ${dt["About Widget"]}
-    // Included Content: ${dt["Included Contents"]}
-    // Link to open, view or navigate: btn://${dt["Navigation Path"].replace(' > ', '/').toLowerCase()}
-    // Tool: btn://${dt["Navigation Path"].replace(' > ', '/').toLowerCase()}
-    // `;
-    //         }
-    //     })
+        excelData.forEach(dt => {
+            if (dt["Widget to Navigate"]) {
+                navigations += `
+Name: ${dt["Widget to Navigate"]}
+Path: ${dt["Navigation Path"]}
+About: ${dt["About Widget"]}
+Included Content: ${dt["Included Contents"]}
+Link to open, view or navigate: btn://${dt["Navigation Path"].replace(' > ', '/').toLowerCase()}
+Tool: btn://${dt["Navigation Path"].replace(' > ', '/').toLowerCase()}
+`;
+        }
+    })
 
-    //     let fileData = `
-    // ${intro}
+    let fileData = `
+${intro}
 
-    // ${commonQuestionAndAnswers}
+${commonQuestionAndAnswers}
 
-    // Widget Navigations
-    // ${navigations}
-    // `
+Widget Navigations
+${navigations}
+`
 
-    //     try {
-    //         await writeFile('./out.txt', fileData, 'utf8');
-    //         console.log('File written successfully');
-    //     } catch (err) {
-    //         console.error('Error writing to file:', err);
-    //     }
+    try {
+        await writeFile('./langChainTrainData.txt', fileData, 'utf8');
+        console.log('File written successfully');
+    } catch (err) {
+        console.error('Error writing to file:', err);
+    }
 
     const loader = new TextLoader("./langChainTrainData.txt");
 
@@ -501,7 +501,7 @@ export const processLangChain = async (reqObject, res) => {
     const vectorStore = await FaissStore.load("./", embeddings);
 
     const model = new ChatOpenAI({
-        temperature: 0.1,
+        temperature: 0.8,
         model: 'gpt-3.5-turbo',
         // verbose: true
     });
@@ -516,11 +516,11 @@ export const processLangChain = async (reqObject, res) => {
         [
             "system",
             // "You are an assistant only focused on Neo Trading Application. You never provide Internet data. Strictly avoid suggesting or providing information about other Applications rather than Neo. Always answers about Neo Application. You will group responses as a list with bold heading all the possible situation. always try to give opening the widget btn:// action. Answer the user's question from the following context: {context}",
-            "You are an assistant solely for the Neo Trading Application. Do not provide information on other apps. Don't use internet data. Don't suggest any apps than Neo Trading App. Group responses as a list with bold headings. Give if there is tool or link. Answer the user's question from the following context: {context}",
+            "You are an assistant solely for the Neo Trading Application. Do not provide information on other apps. Don't use internet data. Don't suggest any apps than Neo Trading App. Answer the user's question from the following context: {context}",
         ],
         ['system', "Do not provide answers from internet sources."],
         ['system', "Do not suggest individuals' details"],
-        ["human", "{input}. Stricly never suggest any stocks, symbols or trading apps."],
+        ["human", "{input}. Always suggest responses based on Neo App to Trade."],
     ]);
     // const prompt = ChatPromptTemplate.fromTemplate("You are an assistant only focused on Neo Trading Application. {input} Arrange responses in a user friendly way. Do not mension the term 'user friendly'. Strictly avoid mentioning other applications.")
 

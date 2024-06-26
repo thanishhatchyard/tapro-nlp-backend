@@ -127,7 +127,7 @@ app.post('/getFromAssistantModified', async (req, res) => {
 })
 
 
-app.post('/langChain', async (req, res) => {
+app.post('/ask', async (req, res) => {
     let response;
 
     try {
