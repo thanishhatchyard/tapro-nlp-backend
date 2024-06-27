@@ -5,6 +5,7 @@ import { requestData } from './requestData.js';
 import { csvReader } from './csvReader.js';
 import { getEnglishAndArabicQuestionsArray } from './getPossibleResults.js';
 import fs from 'fs';
+import path from "path";
 
 const openai = new OpenAI({ apiKey: process.env.GPT_API_KEY });
 
@@ -440,11 +441,11 @@ export const processLangChainTrain = async (reqObject) => {
     let excelData = await csvReader('./navs.csv');
     let prompt = reqObject.prompt;
     let responseData = '';
-        let navigations = '';
+    let navigations = '';
 
-        excelData.forEach(dt => {
-            if (dt["Widget to Navigate"]) {
-                navigations += `
+    excelData.forEach(dt => {
+        if (dt["Widget to Navigate"]) {
+            navigations += `
 Name: ${dt["Widget to Navigate"]}
 Path: ${dt["Navigation Path"]}
 About: ${dt["About Widget"]}
@@ -607,4 +608,83 @@ export const processNonStreamResponse = async (reqObject, res) => {
 
 
     res.json({ parsedResponse });
+}
+
+
+export const processTTS = async (reqObject, res) => {
+    let inputMessage = reqObject.prompt;
+    let responseData = inputMessage;
+
+    try {
+        const mp3 = await openai.audio.speech.create({
+            model: "tts-1",
+            voice: "alloy",
+            input: inputMessage,
+        });
+
+        const buffer = Buffer.from(await mp3.arrayBuffer());
+
+        res.setHeader('Content-Type', 'audio/mpeg');
+        res.setHeader('Content-Disposition', 'attachment; filename=speech.mp3');
+        res.send(buffer);
+    } catch (error) {
+        console.error('Error synthesizing speech:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+}
+
+export const processTTSGoogle = async (reqObject, res) => {
+    let inputMessage = reqObject.prompt;
+    let { lang } = reqObject;
+    let enVoice = {
+        "languageCode": "en-US",
+        "name": "en-US-Journey-F"
+    };
+    let arVoice = {
+        "languageCode": "ar-XA",
+        "name": "ar-XA-Wavenet-A"
+    }
+
+    let voice = lang === 'ar' ? arVoice : enVoice;
+
+    try {
+        const response = await fetch('https://texttospeech.googleapis.com/v1/text:synthesize?key=' + process.env.GOOGLE_CLOUD_ACCESS_TOKEN, {
+            method: 'POST',
+            // headers: {
+            //     'Authorization': `Bearer ${process.env.GOOGLE_CLOUD_ACCESS_TOKEN}`, // Ensure this token is set in your environment
+            //     'x-goog-user-project': process.env.GOOGLE_CLOUD_PROJECT_ID, // Ensure this is set in your environment
+            //     'Content-Type': 'application/json; charset=utf-8'
+            // },
+            body: JSON.stringify({
+                "audioConfig": {
+                    "audioEncoding": "MP3",
+                    "effectsProfileId": [
+                        "small-bluetooth-speaker-class-device"
+                    ],
+                    "pitch": 0,
+                    "speakingRate": 1
+                },
+                "input": {
+                    "text": inputMessage
+                },
+                "voice": voice
+            })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            const audioContent = data.audioContent;
+            const buffer = Buffer.from(audioContent, 'base64');
+
+            res.setHeader('Content-Type', 'audio/mpeg');
+            res.setHeader('Content-Disposition', 'attachment; filename=speech.mp3');
+            res.send(buffer);
+        } else {
+            res.status(response.status).json({ error: data.error });
+        }
+    } catch (error) {
+        console.error('Error synthesizing speech:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
 }
