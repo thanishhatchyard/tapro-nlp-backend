@@ -2,7 +2,7 @@ import 'dotenv/config';
 import express from "express";
 import cors from 'cors'
 import { trainGPT, trainMenuSearchModel, trainModel, updateFineTuneModel } from "./controls/trainModel.js";
-import { getFromAssistant, getFromAssistantModified, getJSONData, getPromptResponse, getResponseFromGPT, processLangChain, processLangChainTrain, processNonStreamResponse, processTTS, processTTSGoogle } from "./controls/processPrompts.js";
+import { getFromAssistant, getFromAssistantModified, getJSONData, getLog, getPromptResponse, getResponseFromGPT, processLangChain, processLangChainTrain, processNonStreamResponse, processTTS, processTTSGoogle, saveLog } from "./controls/processPrompts.js";
 import { processSuggestion } from './controls/processSuggestions.js';
 
 const app = express();
@@ -195,6 +195,32 @@ app.post('/tts-google', async (req, res) => {
     }
 })
 
+app.post('/save-log', async (req, res) => {
+    let response;
+
+    try {
+        response = await saveLog(req.body.prompt);
+    } catch (error) {
+        response = error.toString();
+        return res.json({ message: "Processing Complete!", response });
+    } finally {
+        return res.json({ message: "Processing Complete!", response });
+    }
+})
+
+app.post('/get-log', async (req, res) => {
+    let response;
+
+    try {
+        response = await getLog();
+    } catch (error) {
+        response = error.toString();
+        return res.json({ message: "Processing Complete!", response });
+    } finally {
+        response = response ? response : 'log empty!';
+        return res.json({ message: "Processing Complete!", response });
+    }
+})
 
 app.listen(PORT, () => {
     console.log(`Express server running at http://localhost:${PORT}/`);

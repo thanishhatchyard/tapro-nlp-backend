@@ -501,6 +501,7 @@ export const processLangChain = async (reqObject, res) => {
     const embeddings = new OpenAIEmbeddings();
     const vectorStore = await FaissStore.load("./", embeddings);
 
+    saveLog(inputMessage);
     const model = new ChatOpenAI({
         temperature: 0.8,
         model: 'gpt-3.5-turbo',
@@ -688,3 +689,28 @@ export const processTTSGoogle = async (reqObject, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 }
+
+export const saveLog = async (text) => {
+    const loader = new TextLoader("./promptLog.txt");
+
+    const docs = await loader.load();
+    const newContent = docs[0].pageContent + "\n" + text;
+
+    try {
+        await writeFile('./promptLog.txt', newContent, 'utf8');
+    } catch (err) {
+        console.error('Error writing to file:', err);
+    }
+
+    return docs[0].pageContent;
+}
+
+
+export const getLog = async () => {
+    const loader = new TextLoader("./promptLog.txt");
+
+    const docs = await loader.load();
+
+    return docs[0].pageContent;
+}
+
